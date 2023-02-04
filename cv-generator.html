@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="cv-generator.css">
     <title>cv generator</title>
 </head>
 <body>
@@ -12,7 +13,7 @@
             <h1>პირადი ინფო</h1>
             <hr>
             <div class="top-section">
-                <div class="back-button"></div>
+                <div class="back-button"> </div>
                 <div class="page-counter"></div>
             </div>
     
@@ -20,20 +21,20 @@
                 <div class="name-surname">
                     <div class="name">
                         <label for="name">სახელი</label>
-                        <input type="text" name="name" id="name" placeholder="ანზორ"></input>
+                        <input type="text" name="name" id="name" placeholder="ანზორ">
                         <p>მინიმუმ 2 ასო, ქართული ასოები</p>
                     </div>
                     <div class="surname">
                         <label for="surname">გვარი</label>
-                        <input type="text" name="surname" id="surname" placeholder="მუმლაძე"></input>
+                        <input type="text" name="surname" id="surname" placeholder="მუმლაძე">
                         <p>მინიმუმ 2 ასო, ქართული ასოები</p>
                     </div>
                 </div>
-                <label>პირადი ფოტოს ატვირთვა <input class="image-upload" type="file" accept="Image/*" alt="submit"></label>
+                <label class="upload-photo">პირადი ფოტოს ატვირთვა <input class="image-upload" type="file" accept="Image/*" alt="submit"></label>
                 <div class="more-info">
                     <div class="about-me">
                         <label for="about-me">ჩემ შესახებ (არასავალდებულო)</label>
-                        <textarea name="about-me" id="about-me" cols="70" rows="4"></textarea>
+                        <textarea name="about-me" id="about-me" cols="70" rows="4" placeholder="ზოგადი ინფო შენ შესახებ"></textarea>
                     </div>
                     <div class="mail">
                         <label for="mail">ელ.ფოსტა</label>
@@ -41,7 +42,7 @@
                         <p>უნდა მთავრდებოდეს @redberry.ge-ით</p>
                     </div>
                     <div class="phone">
-                        <label for="phone">მობილურის ნომერი</label>
+                        <label for="phone" id="phone">მობილურის ნომერი</label>
                         <input type="number" name="phone" id="phone" placeholder="+995 551 12 34 56">
                         <p>უნდა აკმაყოფილებდეს ქართული მობილურის ნომრის ფორმატს</p>
                     </div>
