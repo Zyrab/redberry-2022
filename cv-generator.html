@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="cv-generator.css">
+    <script src="main.js"></script>
     <title>cv generator</title>
 </head>
 <body>
@@ -21,29 +22,32 @@
                 <div class="name-surname">
                     <div class="name">
                         <label for="name">სახელი</label>
-                        <input type="text" name="name" id="name" placeholder="ანზორ">
+                        <input type="text" name="name" id="name" onkeyup="liveTextAdd('#name','#abaa')" placeholder="ანზორ">
                         <p>მინიმუმ 2 ასო, ქართული ასოები</p>
                     </div>
                     <div class="surname">
                         <label for="surname">გვარი</label>
-                        <input type="text" name="surname" id="surname" placeholder="მუმლაძე">
+                        <input type="text" name="surname" id="surname" onkeyup="liveTextAdd('#surname','#abaa1')"  placeholder="მუმლაძე">
                         <p>მინიმუმ 2 ასო, ქართული ასოები</p>
                     </div>
                 </div>
-                <label class="upload-photo">პირადი ფოტოს ატვირთვა <input class="image-upload" type="file" accept="Image/*" alt="submit"></label>
+
+                <label class="upload-photo">პირადი ფოტოს ატვირთვა </label>
+                <button class="img-upload" id="img-upload"> <a href="">ატვირთვა</a><input class="image-upload" type="file" accept="Image/*" alt="submit"></button> 
+
                 <div class="more-info">
                     <div class="about-me">
                         <label for="about-me">ჩემ შესახებ (არასავალდებულო)</label>
-                        <textarea name="about-me" id="about-me" cols="70" rows="4" placeholder="ზოგადი ინფო შენ შესახებ"></textarea>
+                        <textarea name="about-me" id="about-me" cols="70" rows="4" onkeyup="liveTextAdd('#about-me','#abaa2')" placeholder="ზოგადი ინფო შენ შესახებ"></textarea>
                     </div>
                     <div class="mail">
                         <label for="mail">ელ.ფოსტა</label>
-                        <input type="mail" name="mail" id="mail" placeholder="anzorr666@redberry.ge">
+                        <input type="mail" name="mail" id="mail" onkeyup="liveTextAdd('#mail','#abaa3')" placeholder="anzorr666@redberry.ge">
                         <p>უნდა მთავრდებოდეს @redberry.ge-ით</p>
                     </div>
                     <div class="phone">
-                        <label for="phone" id="phone">მობილურის ნომერი</label>
-                        <input type="number" name="phone" id="phone" placeholder="+995 551 12 34 56">
+                        <label for="phone" >მობილურის ნომერი</label>
+                        <input type="text" name="phone" id="phone" onkeyup="liveTextAdd('#phone','#abaa4')" placeholder="+995 551 12 34 56">
                         <p>უნდა აკმაყოფილებდეს ქართული მობილურის ნომრის ფორმატს</p>
                     </div>
                 </div>
@@ -53,8 +57,14 @@
             </form>
         </section>
         <section class="generated-cv">
+            <span id="abaa"></span><br>
+            <span id="abaa1"></span><br>
+            <span id="abaa2"></span><br>
+            <span id="abaa3"></span><br>
+            <span id="abaa4"></span><br>
 
         </section>
     </main>
 </body>
+
 </html>
