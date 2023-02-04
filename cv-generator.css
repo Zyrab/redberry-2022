@@ -11,9 +11,10 @@
 main{
     display: flex;
 }
+
 .cv-generator{
     width: 57.1875%;
-    padding: 47px 150px;
+    padding: 47px 150px 0px;
 }
 .generated-cv{
     width: 42.8125%;
@@ -53,7 +54,9 @@ label{
     line-height: 22px;
     color: #1A1A1A;
 }
-input{
+input , textarea{
+    margin-top: 8px;
+    margin-bottom: 8px;
     font-weight: 400;
     font-size: 16px;
     line-height: 21px;
@@ -71,4 +74,60 @@ p{
     line-height: 21px;
     color: #2E2E2E;
 }
+.image-upload{
+    margin-left: 19px;
+    border: none;
+    width: 107px;
+    height: 27px;  
+    background: #0E80BF;
+    color: #FFFFFF;
+    border-radius: 4px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    overflow: hidden;
+    position: relative;
+}
+.image-upload input[type='file']{
+    position: absolute;
+    transform: scale(3);
+    opacity: 0;
+}
+input[type=file]::-webkit-file-upload-button{
+    cursor: pointer;
+}
 
+.about-me{
+    display: flex;
+    flex-direction: column;
+    margin-top: 49px;
+    margin-bottom: 33px;
+}
+textarea{
+    padding-top: 13px;
+    height: 103px;
+    resize: none;
+}
+.phone{
+    margin-top: 29px;
+    margin-bottom: 160px;
+}
+.pages{
+    display: flex;
+    justify-content: flex-end;
+}
+.next-page{
+    width: 151px;
+    height: 48px;
+    background: #6B40E3;
+    border-radius: 4px;
+    border: none;
+}
+.next-page a{
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 0.08em;
+    color: #FFFFFF;
+    text-decoration: none;
+}
