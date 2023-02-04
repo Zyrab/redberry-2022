@@ -34,8 +34,11 @@ button{
     height: 60px;
     background: #1A1A1A;
     border-radius: 8px;
+}
+a{
     color: #ffffff;
     font-size:20px ;
     font-family: "HelveticaNeue";
     font-weight: 500;
+    text-decoration: none;
 }

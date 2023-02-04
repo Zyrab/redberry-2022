@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cv generator</title>
+</head>
+<body>
+    <main>
+        <section class="cv-generator">
+            <h1>პირადი ინფო</h1>
+            <hr>
+            <div class="top-section">
+                <div class="back-button"></div>
+                <div class="page-counter"></div>
+            </div>
+    
+            <form class="personal-info">
+                <div class="name-surname">
+                    <div class="name">
+                        <label for="name">სახელი</label>
+                        <input type="text" name="name" id="name" placeholder="ანზორ"></input>
+                        <p>მინიმუმ 2 ასო, ქართული ასოები</p>
+                    </div>
+                    <div class="surname">
+                        <label for="surname">გვარი</label>
+                        <input type="text" name="surname" id="surname" placeholder="მუმლაძე"></input>
+                        <p>მინიმუმ 2 ასო, ქართული ასოები</p>
+                    </div>
+                </div>
+                <label>პირადი ფოტოს ატვირთვა <input class="image-upload" type="file" accept="Image/*" alt="submit"></label>
+                <div class="more-info">
+                    <div class="about-me">
+                        <label for="about-me">ჩემ შესახებ (არასავალდებულო)</label>
+                        <textarea name="about-me" id="about-me" cols="70" rows="4"></textarea>
+                    </div>
+                    <div class="mail">
+                        <label for="mail">ელ.ფოსტა</label>
+                        <input type="mail" name="mail" id="mail" placeholder="anzorr666@redberry.ge">
+                        <p>უნდა მთავრდებოდეს @redberry.ge-ით</p>
+                    </div>
+                    <div class="phone">
+                        <label for="phone">მობილურის ნომერი</label>
+                        <input type="number" name="phone" id="phone" placeholder="+995 551 12 34 56">
+                        <p>უნდა აკმაყოფილებდეს ქართული მობილურის ნომრის ფორმატს</p>
+                    </div>
+                </div>
+                <button>
+                    <a href="">შემდეგი</a>
+                </button>
+            </form>
+        </section>
+        <section class="generated-cv">
+
+        </section>
+    </main>
+</body>
+</html>
