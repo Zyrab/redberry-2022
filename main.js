@@ -1,6 +1,44 @@
 // varibles
 const form = document.querySelector('form')
+const nameSurnme = document.querySelector('.name-surname')
+const mail = document.querySelector('.mail')
+const phone = document.querySelector('.phone')
 
+//validation chekers
+
+// name surname vlidtion
+nameSurnme.addEventListener('keyup', e=>{
+   //variables
+   var text = e.target.value
+   var georgianText= /^[ა-ჰ]{3,}$/
+   var vlidText = georgianText.test(text)
+   //
+   validInput(vlidText , e.target)
+})
+
+
+//mail validtion
+mail.addEventListener('keyup', e=>{
+   //variables
+   var text = e.target.value
+   var mailText= /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@redberry.ge/
+   var vlidMail = mailText.test(text)
+   //
+   validInput(vlidMail , e.target)
+})
+
+
+//phone vlidtion
+phone.addEventListener('keyup', e=>{
+   //variables
+   var text = e.target.value
+   var phoneNumber= /^\+9955\d{8}$/ 
+   var validNumber = phoneNumber.test(text.trim())
+   //
+   validInput(validNumber , e.target)
+   //formating number input
+
+})
 
 
 
