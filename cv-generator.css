@@ -60,6 +60,7 @@ hr {
     justify-content: space-around;
     height: 125px;
     width: 371px;
+    position: relative;
 }
 
 label{
@@ -139,7 +140,11 @@ textarea{
     height: 103px;
     resize: none;
 }
+.mail{
+    position: relative;
+}
 .phone{
+    position: relative;
     margin-top: 29px;
     margin-bottom: 160px;
 }

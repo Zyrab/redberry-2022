@@ -57,13 +57,6 @@ form.addEventListener('keyup', e =>{
 
 
 
-
-
-
-
-
-
-
 //functions
 
 
@@ -72,6 +65,7 @@ const validInput = (validation, elementId) => {
    if (validation){
        elementId.classList.add('success')
        elementId.classList.remove('error')
+
        
    } else {
        elementId.classList.add('error')
