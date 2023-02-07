@@ -5,49 +5,52 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="cv-generator.css">
-    <script src="main.js"></script>
+    <link rel="stylesheet" href="cv-generated.css">
+    <link rel="stylesheet" href="input-validation.css">
     <title>cv generator</title>
 </head>
 <body>
     <main>
         <section class="cv-generator">
-            <h1>პირადი ინფო</h1>
-            <hr>
             <div class="top-section">
-                <div class="back-button"> </div>
-                <div class="page-counter"></div>
+                <a class="back-arrow" href="index.html"> <img src="./imiges/Vector.png" alt="back-arrow"> </a>
+                <h1>პირადი ინფო</h1>
+                <a class="page-counter"> <img src="./imiges/3.png" alt="page-counter"></a>
             </div>
+            
+            <hr>
+          
     
-            <form class="personal-info">
+            <form class="personal-info" id="personal-info" >
                 <div class="name-surname">
                     <div class="name">
                         <label for="name">სახელი</label>
-                        <input type="text" name="name" id="name" onkeyup="liveTextAdd('#name','#abaa')" placeholder="ანზორ">
+                        <input type="text" name="name" id="name" placeholder="ანზორ">
                         <p>მინიმუმ 2 ასო, ქართული ასოები</p>
                     </div>
                     <div class="surname">
                         <label for="surname">გვარი</label>
-                        <input type="text" name="surname" id="surname" onkeyup="liveTextAdd('#surname','#abaa1')"  placeholder="მუმლაძე">
+                        <input type="text" name="surname" id="surname" placeholder="მუმლაძე">
                         <p>მინიმუმ 2 ასო, ქართული ასოები</p>
                     </div>
                 </div>
 
                 <label class="upload-photo">პირადი ფოტოს ატვირთვა </label>
-                <button class="image-upload" id="iamge-upload"> <a>ატვირთვა</a><input class="image-upload-input" type="file" accept="Image/*" alt="submit"></button> 
+                <button class="image-upload" id="iamge-upload"> <a>ატვირთვა</a><input class="image-upload-input"  type="file" accept="Image/*" alt="submit"></button> 
 
                 <div class="more-info">
                     <div class="about-me">
                         <label for="about-me">ჩემ შესახებ (არასავალდებულო)</label>
-                        <textarea name="about-me" id="about-me" onkeyup="liveTextAdd('#about-me','#abaa2')" placeholder="ზოგადი ინფო შენ შესახებ"></textarea>
+                        <textarea name="about-me" id="about-me" placeholder="ზოგადი ინფო შენ შესახებ"></textarea>
                     </div>
                     <div class="mail">
                         <label for="mail">ელ.ფოსტა</label>
-                        <input type="mail" name="mail" id="mail" onkeyup="liveTextAdd('#mail','#abaa3')" placeholder="anzorr666@redberry.ge">
+                        <input type="text" name="mail" id="mail" placeholder="anzorr666@redberry.ge">
                         <p>უნდა მთავრდებოდეს @redberry.ge-ით</p>
                     </div>
                     <div class="phone">
                         <label for="phone" >მობილურის ნომერი</label>
-                        <input type="text" name="phone" id="phone" onkeyup="liveTextAdd('#phone','#abaa4')" placeholder="+995 551 12 34 56">
+                        <input type="text" name="phone" id="phone"  placeholder="+995 551 12 34 56">
                         <p>უნდა აკმაყოფილებდეს ქართული მობილურის ნომრის ფორმატს</p>
                     </div>
                 </div>
@@ -58,15 +61,36 @@
                 </div>
             </form>
         </section>
-        <section class="generated-cv">
-            <span id="abaa"></span><br>
-            <span id="abaa1"></span><br>
-            <span id="abaa2"></span><br>
-            <span id="abaa3"></span><br>
-            <span id="abaa4"></span><br>
-            <img src="./imiges/LOGO-12 1.png" alt="logo">
+        <section class="cv-generated">
+            <div class="name-surname1">
+                <h2>
+                    <span id="name1"></span>
+                </h2>
+                <h2>
+                    <span id="surname1"></span>
+                </h2>
+            </div>
+            <div class="info">
+                <div>
+                    <img src="./imiges/mail-icon.png" alt="mail-icon">
+                    <span id="mail1"></span>
+                </div>
+
+                <div>
+                    <img src="./imiges/phone-icon.png" alt="phone-icon">
+                    <span id="phone1"></span>
+                </div>
+                <div>
+                    <h3>ჩემ შესახებ</h3>
+                    <span id="about-me1"></span>
+                </div>
+                <div>
+
+                </div>
+            </div>
+            
         </section>
     </main>
 </body>
-
+<script src="main.js"></script>
 </html>
