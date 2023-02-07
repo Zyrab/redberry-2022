@@ -80,7 +80,8 @@ const validInput = (validation, elementId) => {
 const validInputIcon = (validation, elementId) => {
    var valid = elementId.id+'v'
    var inValid = elementId.id+'in'
-   var validId =   document.getElementById(valid)
+
+   var validId = document.getElementById(valid)
    var inValidId = document.getElementById(inValid)
    
 
@@ -97,5 +98,6 @@ const validInputIcon = (validation, elementId) => {
 //
 form.addEventListener('submit', e => {
    e.preventDefault();
+   
 });
 

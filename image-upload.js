@@ -24,5 +24,22 @@ photo.addEventListener('change', e=>{
     displayImg()
     profileImg.splice(file[0])
 
+  //   var valid = e.target.id+'v'
+  //   var inValid = e.target.id+'in'
+  //   var validId = document.getElementById(valid)
+  //   var inValidId = document.getElementById(inValid)
+
+
+  //   if (e.target.value === ' '){
+  //     validId.classList.add('valid')
+  //     inValidId.classList.remove('invalid')
+      
+  // } else {
+  //     inValidId.classList.add('invalid')
+  //     validId.classList.remove('valid')
+  // }
 
 })
+
+
+

@@ -1,6 +1,6 @@
 @font-face {
     font-family: "HelveticaNeue";
-    src: url("./fonts/HelveticaNeue.ttc");
+    src: url("../fonts/HelveticaNeue.ttc");
 }
 * {
     margin: 0;
@@ -8,22 +8,12 @@
     box-sizing: border-box;
     font-family: "HelveticaNeue";
 }
-section{
-    padding: 68px 75px 0px 80px
-}
 
 .name-surname1{
     display: flex;
     gap: 20px;
     margin-bottom: 17px;
 }
-h2{
-    font-weight: 700;
-    font-size: 34px;
-    line-height: 42px;
-    color: #F93B1D;
-}
-
 
 
 .user-img{
