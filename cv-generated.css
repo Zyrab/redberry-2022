@@ -24,3 +24,22 @@ h2{
     line-height: 42px;
     color: #F93B1D;
 }
+
+
+
+.user-img{
+    position: relative;
+}
+.image{
+    position: absolute;
+    width: 246px;
+    height: 246px;
+    border-radius: 133px;
+    overflow: hidden;
+    right: 0;
+    top: -130px;
+ 
+}
+.image img{
+    width: 100%;
+}

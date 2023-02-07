@@ -72,3 +72,22 @@ const validInput = (validation, elementId) => {
        elementId.classList.remove('success')
    }
 }
+
+const validInputIconsNameSurname = (validation) => {
+   if (validation){
+       elementId.style.opacity = '100' 
+       elementId.style.opacity = '0'      
+   } else {
+      elementId.style.opacity = '100'
+      elementId.style.opacity = '0'
+   }
+}
+
+element.style.color = 'yellow'
+
+
+
+form.addEventListener('submit', e => {
+   e.preventDefault();
+});
+
