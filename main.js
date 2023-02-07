@@ -14,6 +14,7 @@ nameSurnme.addEventListener('keyup', e=>{
    var vlidText = georgianText.test(text)
    //
    validInput(vlidText , e.target)
+   validInputIcon(vlidText , e.target)
 })
 
 
@@ -25,6 +26,7 @@ mail.addEventListener('keyup', e=>{
    var vlidMail = mailText.test(text)
    //
    validInput(vlidMail , e.target)
+   validInputIcon(vlidMail , e.target)
 })
 
 
@@ -36,6 +38,7 @@ phone.addEventListener('keyup', e=>{
    var validNumber = phoneNumber.test(text.trim())
    //
    validInput(validNumber , e.target)
+   validInputIcon(validNumber , e.target)
    //formating number input
 
 })
@@ -73,20 +76,25 @@ const validInput = (validation, elementId) => {
    }
 }
 
-const validInputIconsNameSurname = (validation) => {
+// vlidtion icon disply function
+const validInputIcon = (validation, elementId) => {
+   var valid = elementId.id+'v'
+   var inValid = elementId.id+'in'
+   var validId =   document.getElementById(valid)
+   var inValidId = document.getElementById(inValid)
+   
+
    if (validation){
-       elementId.style.opacity = '100' 
-       elementId.style.opacity = '0'      
+       validId.classList.add('valid')
+       inValidId.classList.remove('invalid')
+       
    } else {
-      elementId.style.opacity = '100'
-      elementId.style.opacity = '0'
+       inValidId.classList.add('invalid')
+       validId.classList.remove('valid')
    }
 }
 
-element.style.color = 'yellow'
-
-
-
+//
 form.addEventListener('submit', e => {
    e.preventDefault();
 });
