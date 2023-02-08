@@ -10,6 +10,7 @@
     font-family: "HelveticaNeue";
 }
 main{
+    height: 1080px;
     display: flex;
 }
 
@@ -96,7 +97,7 @@ textarea{
     height: 103px;
     resize: none;
 }
-button{
+button .pages{
     width: 289px;
     height: 48px;
     background: #62A1EB;
@@ -105,6 +106,7 @@ button{
     font-size: 16px;
     line-height: 20px;
     color: #FFFFFF;
+    padding-bottom: 65px;
 }
 
 

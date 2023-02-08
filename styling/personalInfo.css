@@ -63,7 +63,7 @@
     justify-content: space-between;
 
 }
-.personal-info .pages button{
+#form-page-1 .pages button{
     margin-left: auto;
 }
 .pages button{

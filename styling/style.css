@@ -1,6 +1,6 @@
 @font-face {
         font-family: "HelveticaNeue";
-        src: url("./fonts/HelveticaNeue.ttc");
+        src: url("../fonts/HelveticaNeue.ttc");
 }
 * {
     margin: 0;
@@ -8,7 +8,7 @@
     box-sizing: border-box;
 }
 body { 
-    background-image:url(./imiges/LOGO-40\ 1.png), url(./imiges/shutterstock_2189773743\ 1.png);
+    background-image:url(../imiges/LOGO-40\ 1.png), url(../imiges/shutterstock_2189773743\ 1.png);
     background-repeat: no-repeat;
     background-position: 1076px 550px, 0 0;
 }

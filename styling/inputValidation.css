@@ -52,3 +52,15 @@
 .valid{
     opacity: 100;
 }
+
+
+.form-page{
+    display: none;
+} 
+
+.passive{
+    display: none;
+}
+.active{
+    display: block;
+}
