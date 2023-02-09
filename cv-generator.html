@@ -94,57 +94,61 @@
 
                     <hr>
 
-                    <div class="">
-                        <label for="">თანამდებობა</label>
-                        <div class="validation">
-                            <img src="./imiges/valid.png" alt="valid" class="valide" id="positionValid" >
-                            <img src="./imiges/invalid.png" alt="invalid" class="invalidv" id="" >
-                        </div>
-                        <input type="text" name="" id="position" placeholder="დეველოპერი, დიზაინერი, ა.შ.">
-                        <p>მინიმუმ 2 სიმბოლო</p>
-                    </div>
-
-                    <div class="">
-                        <label for="">დამსაქმებელი</label>
-                        <div class="validation">
-                            <img src="./imiges/valid.png" alt="valid" class="valide" id="employerValid" >
-                            <img src="./imiges/invalid.png" alt="invalid" class="invalidv" id="" >
-                        </div>
-                        <input type="text" name="" id="employer" placeholder="დამსაქმებელი">
-                        <p>მინიმუმ 2 სიმბოლო</p>
-                    </div>
-
-                    <div class="">
+                    <div class="experience" id="experience-div">
+    
                         <div class="">
-                            <label for="dos">დაწყების რიცხვი</label>
-                            <input type="date" name="dos" id="dos">
+                            <label for="">თანამდებობა</label>
                             <div class="validation">
-                                <img src="./imiges/valid.png" alt="valid" class="validns" id="" >
-                                <img src="./imiges/invalid.png" alt="invalid" class="invalidns" id="" >
+                                <img src="./imiges/valid.png" alt="valid" class="valide" id="positionValid" >
+                                <img src="./imiges/invalid.png" alt="invalid" class="invalidv" id="" >
+                            </div>
+                            <input type="text" name="" id="position" placeholder="დეველოპერი, დიზაინერი, ა.შ.">
+                            <p>მინიმუმ 2 სიმბოლო</p>
+                        </div>
+    
+                        <div class="">
+                            <label for="">დამსაქმებელი</label>
+                            <div class="validation">
+                                <img src="./imiges/valid.png" alt="valid" class="valide" id="employerValid" >
+                                <img src="./imiges/invalid.png" alt="invalid" class="invalidv" id="" >
+                            </div>
+                            <input type="text" name="" id="employer" placeholder="დამსაქმებელი">
+                            <p>მინიმუმ 2 სიმბოლო</p>
+                        </div>
+    
+                        <div class="">
+                            <div class="">
+                                <label for="dos">დაწყების რიცხვი</label>
+                                <input type="date" name="dos" id="dos">
+                                <div class="validation">
+                                    <img src="./imiges/valid.png" alt="valid" class="validns" id="" >
+                                    <img src="./imiges/invalid.png" alt="invalid" class="invalidns" id="" >
+                                </div>
+                            </div>
+    
+                            <div class="">
+                                <label for="doff">დამთავრების რიცხვი</label>
+                                <input type="date" name="doff" id="doff" >
+                                <div class="validation">
+                                    <img src="./imiges/valid.png" alt="valid" class="validns" id="">
+                                    <img src="./imiges/invalid.png" alt="invalid" class="invalidns" id="">
+                                </div>
                             </div>
                         </div>
-
+    
                         <div class="">
-                            <label for="doff">დამთავრების რიცხვი</label>
-                            <input type="date" name="doff" id="doff" >
-                            <div class="validation">
-                                <img src="./imiges/valid.png" alt="valid" class="validns" id="">
-                                <img src="./imiges/invalid.png" alt="invalid" class="invalidns" id="">
+                            <div class="">
+                                <label for="">აღწერა</label>
+                                <textarea name="about-me" id="" placeholder="როლი თანამდებობაზე დ ზოგდი აღწერა"></textarea>
                             </div>
                         </div>
-                    </div>
-
-            
-                    <div class="">
-                        <div class="">
-                            <label for="">აღწერა</label>
-                            <textarea name="about-me" id="" placeholder="როლი თანამდებობაზე დ ზოგდი აღწერა"></textarea>
-                        </div>
-                    </div>
-                    <hr>
-                    <button> 
+                        <hr>
+                    </div >
+                    <div class="experiance" id = "experience-div-added"></div>
+                    <button class="add-button" id="experience"> 
                         მეტი გამოცდილების დამატება
                     </button>
+
                     <div class="pages">
                         <button type="button" class="pagebutton" id="page-1">უკან</button>
                         <button type="button" class="pagebutton" id="page-3">შემდეგი</button>
@@ -161,45 +165,48 @@
 
                     <hr>
 
-                    <div class="">
-                        <label for="">სასწვლებელი</label>
-                        <div class="validation">
-                            <img src="./imiges/valid.png" alt="valid" class="valide" id="" >
-                            <img src="./imiges/invalid.png" alt="invalid" class="invalidv" id="" >
-                        </div>
-                        <input type="text" name="" id="" placeholder="სასწვლებელი">
-                        <p>მინიმუმ 2 სიმბოლო</p>
-                    </div>
-
-                    <div class="">
+                    <div class="education" id="education-div">
                         <div class="">
-                            <label for="">ხარისხი</label>
-                            <input type="text" name="" id="" placeholder="აირჩიე ხარისხი">
+                            <label for="">სასწვლებელი</label>
                             <div class="validation">
-                                <img src="./imiges/valid.png" alt="valid" class="validns" id="" >
-                                <img src="./imiges/invalid.png" alt="invalid" class="invalidns" id="" >
+                                <img src="./imiges/valid.png" alt="valid" class="valide" id="" >
+                                <img src="./imiges/invalid.png" alt="invalid" class="invalidv" id="" >
+                            </div>
+                            <input type="text" name="" id="" placeholder="სასწვლებელი">
+                            <p>მინიმუმ 2 სიმბოლო</p>
+                        </div>
+    
+                        <div class="">
+                            <div class="">
+                                <label for="">ხარისხი</label>
+                                <input type="text" name="" id="" placeholder="აირჩიე ხარისხი">
+                                <div class="validation">
+                                    <img src="./imiges/valid.png" alt="valid" class="validns" id="" >
+                                    <img src="./imiges/invalid.png" alt="invalid" class="invalidns" id="" >
+                                </div>
+                            </div>
+    
+                            <div class="">
+                                <label for="dof">დამთავრების რიცხვი</label>
+                                <input type="date" name="dof" id="dof" >
+                                <div class="validation">
+                                    <img src="./imiges/valid.png" alt="valid" class="validns" id="">
+                                    <img src="./imiges/invalid.png" alt="invalid" class="invalidns" id="">
+                                </div>
                             </div>
                         </div>
-
+    
+                
                         <div class="">
-                            <label for="dof">დამთავრების რიცხვი</label>
-                            <input type="date" name="dof" id="dof" >
-                            <div class="validation">
-                                <img src="./imiges/valid.png" alt="valid" class="validns" id="">
-                                <img src="./imiges/invalid.png" alt="invalid" class="invalidns" id="">
+                            <div class="">
+                                <label for="">აღწერა</label>
+                                <textarea name="about-me" id="" placeholder="განათლების აღწერა"></textarea>
                             </div>
                         </div>
+                        <hr>
                     </div>
-
-            
-                    <div class="">
-                        <div class="">
-                            <label for="">აღწერა</label>
-                            <textarea name="about-me" id="" placeholder="განათლების აღწერა"></textarea>
-                        </div>
-                    </div>
-                    <hr>
-                    <button> 
+                    <div class="education" id="education-div-added"></div>
+                    <button class="add-button" id="education"> 
                         სხვა სასწვლებელის დამატება
                     </button>
                     <div class="pages">

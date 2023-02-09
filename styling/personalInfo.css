@@ -79,3 +79,8 @@
     color: #FFFFFF;
 
 }
+
+#form-page-2,#form-page-3{
+    overflow: auto;
+    height: 1080px;
+}

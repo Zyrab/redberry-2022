@@ -103,11 +103,13 @@ form.addEventListener('submit', e => {
 });
 
 
-// page  navigation
+// page  navigation buttons
+
 form.addEventListener('click', e =>{
    
    const isPageButton = e.target.className === 'pagebutton';
-  if (!isPageButton) {
+   const addButton = e.target.className === 'add-button'
+  if (!isPageButton && !addButton) {
     return;
   }
 
@@ -148,7 +150,23 @@ form.addEventListener('click', e =>{
       
       // console.log(e.target.id)
 
+  //experiance, aducation adding function
+
+  addButtonFunction (e.target)
 
 
 })
 
+
+
+  const addButtonFunction = (element) => {
+   var whatToClone = element.id+'-div'
+   var whereToClone = whatToClone+'-added'
+   console.log(element.className)
+   if ( element.className!== 'add-button'){
+      return
+   }
+  const node = document.getElementById(whatToClone);
+  const clone = node.cloneNode(true);
+  document.getElementById(whereToClone).appendChild(clone);
+}
