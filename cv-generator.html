@@ -27,7 +27,7 @@
                     <div class="name-surname">
                         <div class="name">
                             <label for="name">სახელი</label>
-                            <input type="text" name="name" id="name" placeholder="ანზორ">
+                            <input class="namesurname" type="text" name="name" id="name" placeholder="ანზორ">
                             <div class="validation">
                                 <img src="./imiges/valid.png" alt="valid" class="validns" id="nameValid" >
                                 <img src="./imiges/invalid.png" alt="invalid" class="invalidns" id="nameinValid" >
@@ -37,7 +37,7 @@
 
                         <div class="surname">
                             <label for="surname">გვარი</label>
-                            <input type="text" name="surname" id="surname" placeholder="მუმლაძე">
+                            <input class="namesurname" type="text" name="surname" id="surname" placeholder="მუმლაძე">
                             <div class="validation">
                                 <img src="./imiges/valid.png" alt="valid" class="validns" id="surnameValid">
                                 <img src="./imiges/invalid.png" alt="invalid" class="invalidns" id="surnameinValid">
@@ -59,23 +59,23 @@
                             <textarea name="about-me" id="about-me" placeholder="ზოგადი ინფო შენ შესახებ"></textarea>
                         </div>
 
-                        <div class="mail">
+                        <div class="div-info-container">
                             <label for="mail">ელ.ფოსტა</label>
                             <div class="validation">
                                 <img src="./imiges/valid.png" alt="valid" class="valide" id="mailValid" >
                                 <img src="./imiges/invalid.png" alt="invalid" class="invalidv" id="mailinValid" >
                             </div>
-                            <input type="text" name="mail" id="mail" placeholder="anzorr666@redberry.ge">
+                            <input  class="mail" type="text" name="mail" id="mail" placeholder="anzorr666@redberry.ge">
                             <p>უნდა მთავრდებოდეს @redberry.ge-ით</p>
                         </div>
 
-                        <div class="phone">
+                        <div class="div-info-container">
                             <label for="phone" >მობილურის ნომერი</label>
                             <div class="validation">
                                 <img src="./imiges/valid.png" alt="valid" class="valide" id="phoneValid">
                                 <img src="./imiges/invalid.png" alt="invalid" class="invalidv" id="phoneinValid">
                             </div>
-                            <input type="text" name="phone" id="phone"  placeholder="+995 551 12 34 56">
+                            <input class="phone" type="text" name="phone" id="phone"  placeholder="+995 551 12 34 56">
                             <p>უნდა აკმაყოფილებდეს ქართული მობილურის ნომრის ფორმატს</p>
                         </div>
                     </div>
@@ -96,23 +96,23 @@
 
                     <div class="experience" id="experience-div">
     
-                        <div class="div-position">
+                        <div class="div-info-container">
                             <label for="position">თანამდებობა</label>
                             <div class="validation">
                                 <img src="./imiges/valid.png" alt="valid" class="valide" id="positionValid" >
                                 <img src="./imiges/invalid.png" alt="invalid" class="invalidv" id="positioninValid" >
                             </div>
-                            <input type="text" name="position" id="position" placeholder="დეველოპერი, დიზაინერი, ა.შ.">
+                            <input class="info-input" type="text" name="position" id="position" placeholder="დეველოპერი, დიზაინერი, ა.შ.">
                             <p>მინიმუმ 2 სიმბოლო</p>
                         </div>
     
-                        <div class="div-employer">
-                            <label for="">დამსაქმებელი</label>
+                        <div class="div-info-container">
+                            <label for="employer">დამსაქმებელი</label>
                             <div class="validation">
                                 <img src="./imiges/valid.png" alt="valid" class="valide" id="employerValid" >
-                                <img src="./imiges/invalid.png" alt="invalid" class="invalidv" id="" >
+                                <img src="./imiges/invalid.png" alt="invalid" class="invalidv" id="employerinValid" >
                             </div>
-                            <input type="text" name="" id="employer" placeholder="დამსაქმებელი">
+                            <input class="info-input" type="text" name="employer" id="employer" placeholder="დამსაქმებელი">
                             <p>მინიმუმ 2 სიმბოლო</p>
                         </div>
     
@@ -166,20 +166,20 @@
                     <hr>
 
                     <div class="education" id="education-div">
-                        <div class="school">
-                            <label for="">სასწვლებელი</label>
+                        <div class="div-info-container">
+                            <label for="school">სასწვლებელი</label>
                             <div class="validation">
                                 <img src="./imiges/valid.png" alt="valid" class="valide" id="" >
                                 <img src="./imiges/invalid.png" alt="invalid" class="invalidv" id="" >
                             </div>
-                            <input type="text" name="" id="" placeholder="სასწვლებელი">
+                            <input class="info-input" type="text" name="school" id="school" placeholder="სასწვლებელი">
                             <p>მინიმუმ 2 სიმბოლო</p>
                         </div>
     
                         <div class="date-box">
                             <div class="diploma">
-                                <label for="">ხარისხი</label>
-                                <input type="text" name="" id="" placeholder="აირჩიე ხარისხი">
+                                <label for="diploma">ხარისხი</label>
+                                <input class="info-input" type="text" name="diploma" id="diploma" placeholder="აირჩიე ხარისხი">
                                 <div class="validation">
                                     <img src="./imiges/valid.png" alt="valid" class="validns" id="" >
                                     <img src="./imiges/invalid.png" alt="invalid" class="invalidns" id="" >

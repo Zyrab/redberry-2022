@@ -1,67 +1,60 @@
 // varibles
 const form = document.querySelector('form')
-const nameSurnme = document.querySelector('.name-surname')
-const mail = document.querySelector('.mail')
-const phone = document.querySelector('.phone')
-
-//validation chekers
-
-// name surname vlidtion
-nameSurnme.addEventListener('keyup', e=>{
-   //variables
-   var text = e.target.value
-   var georgianText= /^[ა-ჰ]{3,}$/
-   var vlidText = georgianText.test(text)
-   //
-   validInput(vlidText , e.target)
-   validInputIcon(vlidText , e.target)
-})
 
 
-//mail validtion
-mail.addEventListener('keyup', e=>{
-   //variables
-   var text = e.target.value
-   var mailText= /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@redberry.ge/
-   var vlidMail = mailText.test(text)
-   //
-   validInput(vlidMail , e.target)
-   validInputIcon(vlidMail , e.target)
-})
-
-
-//phone vlidtion
-phone.addEventListener('keyup', e=>{
-   //variables
-   var text = e.target.value
-   var phoneNumber= /^\+9955\d{8}$/ 
-   var validNumber = phoneNumber.test(text.trim())
-   //
-   validInput(validNumber , e.target)
-   validInputIcon(validNumber , e.target)
-   //formating number input
-
-})
-
-
-
-// for text generation
+// form keyup event listener. 
 form.addEventListener('keyup', e =>{ 
+
    //variables
-   var outpudId = e.target.id+'Viwe'
-   var liveText = e.target.value 
    var elementId = e.target
+   var className = e.target.className
+   var liveText = e.target.value 
+   var outpudId = e.target.id+'Viwe'
    //--//
+
    //live text generator      
-   document.getElementById(outpudId).innerHTML=liveText 
+
+   //document.getElementById(outpudId).innerHTML=liveText 
+
    //--//
+
+   // regex for every posible text validations in this form
+
+   var onlyGeorgian = /^[ა-ჰ]{3,}$/
+   var min2Symbol = /^[ა-ჰa-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]{3,}/
+   var phoneNumber= /^\+9955\d{8}$/ 
+   var mailText= /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@redberry.ge/
+
+   //
+   
+   // generting classnmes to target specific inputs
+   var infoValidtion = classNameMaker(className,'info-input')
+   var nameSurnme = classNameMaker(className,'namesurname')
+   var forPhoneNumber = classNameMaker(className,'phone')
+   var forMail = classNameMaker(className,'mail')
+      
+
+   //displying validation icons
+  validationFunction(infoValidtion,min2Symbol,liveText,elementId)
+  validationFunction(nameSurnme,onlyGeorgian,liveText,elementId)
+  validationFunction(forPhoneNumber,phoneNumber,liveText,elementId)
+  validationFunction(forMail,mailText,liveText,elementId)
 })
 
+// generates a classname for validtion selector
+   const classNameMaker = (targetClass, elementClass) => {
+      var className =(targetClass === elementClass || targetClass === elementClass +' '+'error' || targetClass === elementClass +' '+'success')
+      return className
+   }
 
-
-
-//functions
-
+// validtes a input text based on regex
+ const validationFunction = (clssname,regex,text,elementId ) =>{
+      var validRegex = regex.test(text.trim())
+      if (clssname){ 
+         validInput(validRegex,elementId)
+         validInputIcon(validRegex,elementId)
+      } 
+ }
 
 //chek vlid input
 const validInput = (validation, elementId) => {
@@ -150,7 +143,7 @@ form.addEventListener('click', e =>{
       
       // console.log(e.target.id)
 
-  //experiance, aducation adding function
+  //listens to a button for experiance, aducation and adds section
 
   addButtonFunction (e.target)
 
@@ -158,15 +151,17 @@ form.addEventListener('click', e =>{
 })
 
 
-
+// clone function
   const addButtonFunction = (element) => {
    var whatToClone = element.id+'-div'
    var whereToClone = whatToClone+'-added'
-   console.log(element.className)
    if ( element.className!== 'add-button'){
       return
    }
   const node = document.getElementById(whatToClone);
-  const clone = node.cloneNode(true);
-  document.getElementById(whereToClone).appendChild(clone);
+  //const clone = node.cloneNode(true);
+  const para = document.createElement("div");
+  para.innerText = "This is a paragraph";
+  document.getElementById(whereToClone).appendChild(para);
+
 }

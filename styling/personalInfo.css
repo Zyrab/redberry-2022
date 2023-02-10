@@ -50,21 +50,17 @@
     margin-bottom: 33px;
 }
 
-.mail,.div-position,.div-employer,.school{
+.div-info-container{
     position: relative;
-}
-.phone{
-    position: relative;
-    margin-top: 29px;
-    margin-bottom: 160px;
+
 }
 .pages{
     display: flex;
     justify-content: space-between;
-
 }
 #form-page-1 .pages button{
     margin-left: auto;
+    margin-top: 160px;
 }
 .pages button{
     width: 151px;
@@ -81,7 +77,8 @@
 }
 
 #form-page-2,#form-page-3{
-    overflow-x:  hidden ;
-    overflow-y: auto;
     height: 997px;
+}
+::-webkit-scrollbar{
+    display: none;
 }
