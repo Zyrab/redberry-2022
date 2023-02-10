@@ -17,7 +17,6 @@ main{
 header{
     display: flex;
     justify-content: space-between;
-    width: 100%;
     align-items: center;
 }
 header a:first-of-type{
@@ -26,14 +25,14 @@ header a:first-of-type{
 
 }
 section{
-    width: 57.1875%;
+    width: 1098px;
     padding: 47px 150px 0px;
     background-color: #F9F9F9;
 }
 
 aside{
     padding: 68px 75px 0px 80px;
-    width: 42.8125%;
+    width: 822px;
 }
 
 h1{
@@ -97,7 +96,7 @@ textarea{
     height: 103px;
     resize: none;
 }
-button .pages{
+.add-button{
     width: 289px;
     height: 48px;
     background: #62A1EB;
@@ -106,7 +105,8 @@ button .pages{
     font-size: 16px;
     line-height: 20px;
     color: #FFFFFF;
-    padding-bottom: 65px;
+    margin-bottom: 65px;
+    border: none;
 }
 
 

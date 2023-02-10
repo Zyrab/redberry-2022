@@ -1,10 +1,10 @@
 
-.name-surname{
+.name-surname, .date-box{
     display: flex;
     justify-content: space-between;
     margin-bottom: 54px;
 }
-.name, .surname{
+.name, .surname, .diploma, .date-holder{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -50,7 +50,7 @@
     margin-bottom: 33px;
 }
 
-.mail{
+.mail,.div-position,.div-employer,.school{
     position: relative;
 }
 .phone{
@@ -81,6 +81,7 @@
 }
 
 #form-page-2,#form-page-3{
-    overflow: auto;
-    height: 1080px;
+    overflow-x:  hidden ;
+    overflow-y: auto;
+    height: 997px;
 }

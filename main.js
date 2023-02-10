@@ -79,7 +79,7 @@ const validInput = (validation, elementId) => {
 // vlidtion icon disply function
 const validInputIcon = (validation, elementId) => {
    var valid = elementId.id+'Valid'
-   var inValid = elementId.id+'in'
+   var inValid = elementId.id+'inValid'
 
    var validId = document.getElementById(valid)
    var inValidId = document.getElementById(inValid)
