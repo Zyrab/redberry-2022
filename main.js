@@ -1,5 +1,7 @@
 // varibles
 const form = document.querySelector('form')
+
+
 var nnm=document.getElementById('name')
 window.onload = function(){
     
@@ -35,6 +37,7 @@ form.addEventListener('keyup', e => {
 
     var onlyGeorgian = /^[ა-ჰ]{2,}$/
     var min2Symbol = /^[ა-ჰa-zA-Z0-9.!#$%&'*+/=?^_` {|}~-]{2,}/
+    var textarea = /^[ა-ჰa-zA-Z0-9.!#$%&'*+/=?^_` {|}~-]/
     var phoneNumber = /^\+9955\d{8}$/
     var mailText = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@redberry.ge/
 
@@ -45,6 +48,7 @@ form.addEventListener('keyup', e => {
     var nameSurnme = classNameMaker(className, 'namesurname')
     var forPhoneNumber = classNameMaker(className, 'phone')
     var forMail = classNameMaker(className, 'mail')
+    var forTextarea = classNameMaker(className, 'textarea')
 
 
     //displying validation icons
@@ -52,6 +56,7 @@ form.addEventListener('keyup', e => {
     validationFunction(nameSurnme, onlyGeorgian, liveText, elementId)
     validationFunction(forPhoneNumber, phoneNumber, liveText, elementId)
     validationFunction(forMail, mailText, liveText, elementId)
+    validationFunction(forTextarea, textarea, liveText, elementId)
 })
 
 // generates a classname for validtion selector
@@ -114,8 +119,18 @@ form.addEventListener('click', e => {
         return; 
     }
     addButtonFunction(e.target);
-    nextPageButtonActivator(e.target.id);
-   
+    if(e.target.id ==="page-2" ){
+        nextPageButtonActivator(e.target.id);
+    }
+    
+    if (e.target.id ==="page-3" || e.target.id === "page-1"){
+
+        nextPageButtonActivator2(e.target.id);
+    }
+    if (e.target.id ==="pagi-2" ||e.target.id ==="pagi-4" ){
+
+        nextPageButtonActivator3(e.target.id);
+    }
     
 })
 
@@ -182,8 +197,6 @@ function sddfdddgg(elementNode) {
 // 
 function nextPageValidtion(elementNode ) {
     var error = []
-   
-       
         for (i = 0 ; i < elementNode.length; i++) {
             node = elementNode.item(i)
              
@@ -193,7 +206,6 @@ function nextPageValidtion(elementNode ) {
             var validId = document.getElementById(nodeIdV)
             var inValidId = document.getElementById(nodeIdIn)
             if (node.classList.contains('error') || node.value==="") {
-                
                 error.push(node)
                 node.labels.item(0).style.color = '#E52F2F' 
                 //icon display
@@ -202,12 +214,14 @@ function nextPageValidtion(elementNode ) {
                 //border display
                 node.classList.add('error')
                 node.classList.remove('success')
+               
             } else{         
                 node.labels.item(0).style.color = '#000000'  
            //error.splice(node)
             }
         }
        return error.length
+       
         
 } 
 
@@ -216,52 +230,81 @@ function nextPageValidtion(elementNode ) {
 
 // page buttons activator
 
-const nextPageButtonActivator = (elementId) => {
-var page1 = document.getElementById('form-page-1')
-var page2 = document.getElementById('form-page-2')
-var page3 = document.getElementById('form-page-3')
-var page1Input = page1.getElementsByTagName('INPUT')
-var page2Input = page2.getElementsByTagName('INPUT')
-
-// console.log(inputType.item(1).value)
-
-pageCounter = +(elementId).charAt((elementId).length - 1)
-   
-
-if (pageCounter === 1 ) {
-    page1.classList.add('active')
-    page1.classList.remove('passive')
-    page2.classList.remove('active')
-    page2.classList.add('passive')
-    page3.classList.remove('active')
-    page3.classList.add('passive')
-    
-    
-}
-nextPageValidtion(page1Input)        
-        
-        if (pageCounter === 2 && nextPageValidtion(page1Input) ===5) {
-            
+    // page1
+    const nextPageButtonActivator = (elementId) => {
+        var page1 = document.getElementById('form-page-1')
+        var page2 = document.getElementById('form-page-2')
+        var page3 = document.getElementById('form-page-3')
+        var page1Input = page1.getElementsByTagName('INPUT')
+            pageCounter = +(elementId).charAt((elementId).length - 1)      
+        if (pageCounter === 2 && nextPageValidtion(page1Input) ===0) {
             page1.classList.add('passive')
             page1.classList.remove('active')
             page2.classList.add('active')
             page2.classList.remove('passive')
             page3.classList.remove('active')
-            page3.classList.add('passive')           
+            page3.classList.add('passive')       
         } 
-
-        nextPageValidtion(page2Input)    
-        if (pageCounter === 3 && nextPageValidtion(page2Input) ===4) {
-            
+    }
+    
+    // page2
+   const nextPageButtonActivator2 = (elementId) => {
+       var page2 = document.getElementById('form-page-2')
+       var page1 = document.getElementById('form-page-1')
+       var page3 = document.getElementById('form-page-3')
+       var page2Input = page2.querySelectorAll('INPUT , TEXTAREA')
+           pageCounter = +(elementId).charAt((elementId).length - 1)     
+       if (pageCounter === 1 ) {
+           page1.classList.add('active')
+           page1.classList.remove('passive')
+           page2.classList.remove('active')
+           page2.classList.add('passive')
+           page3.classList.remove('active')
+           page3.classList.add('passive')           
+        }
+        if (pageCounter === 3 && nextPageValidtion(page2Input) ===0 ) {
+           page1.classList.add('passive')
+           page1.classList.remove('active')
+           page2.classList.remove('active')
+           page2.classList.add('passive')
+           page3.classList.add('active')
+           page3.classList.remove('passive')
+       }
+   }
+    //page3
+    const nextPageButtonActivator3 = (elementId) => {
+        var page1 = document.getElementById('form-page-1')
+        var page2 = document.getElementById('form-page-2')
+        var page3 = document.getElementById('form-page-3')
+        var page3Input = page3.querySelectorAll('INPUT , TEXTAREA')
+            pageCounter = +(elementId).charAt((elementId).length - 1)
+        if (pageCounter === 2) {
             page1.classList.add('passive')
             page1.classList.remove('active')
-            page2.classList.remove('active')
-            page2.classList.add('passive')
-            page3.classList.add('active')
-            page3.classList.remove('passive')
-            
+            page2.classList.add('active')
+            page2.classList.remove('passive')
+            page3.classList.remove('active')
+            page3.classList.add('passive')        
+        }   
+        
+        if (pageCounter === 4 && nextPageValidtion(page3Input) ===0) {       
         }
+        }
+
+
+
+
+
+
+
+    form.addEventListener('change', e =>{
+        const dateInput = e.target.type === 'date';
+    if (!dateInput) {
+        return; 
     }
 
+        var validation =  (e.target.valueAsNumber !== 0 )
+            validInputIcon  ( validation, e.target)
 
 
+    })

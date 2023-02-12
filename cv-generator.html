@@ -128,7 +128,7 @@
                         <div class="date-box">
                             <div class="date-holder">
                                 <label for="dos">დაწყების რიცხვი</label>
-                                <input type="date" name="dos" id="dos">
+                                <input type="date" name="dos" id="dos" class="date-input">
                                 <div class="validation">
                                     <img src="./imiges/valid.png" alt="valid" class="valide" id="dosValid">
                                     <img src="./imiges/invalid.png" alt="invalid" class="invalidv" id="dosinValid">
@@ -137,7 +137,7 @@
 
                             <div class="date-holder">
                                 <label for="doff">დამთავრების რიცხვი</label>
-                                <input type="date" name="doff" id="doff">
+                                <input type="date" name="doff" id="doff" class="date-input">
                                 <div class="validation">
                                     <img src="./imiges/valid.png" alt="valid" class="valide" id="doffValid">
                                     <img src="./imiges/invalid.png" alt="invalid" class="invalidv" id="doffinValid">
@@ -147,12 +147,12 @@
 
                         <div class="div-info-container">
                             <div class="">
-                                <label for="">აღწერა</label>
+                                <label for="description">აღწერა</label>
                                 <div class="validation">
                                     <img src="./imiges/valid.png" alt="valid" class="valide" id="descriptionValid">
                                     <img src="./imiges/invalid.png" alt="invalid" class="invalidv" id="descriptioninValid">
                                 </div>
-                                <textarea name="about-me" id="description"
+                                <textarea name="description" id="description" class="textarea"
                                     placeholder="როლი თანამდებობაზე დ ზოგდი აღწერა"></textarea>
                                 </div>
                         </div>
@@ -203,7 +203,7 @@
 
                             <div class="date-holder">
                                 <label for="dof">დამთავრების რიცხვი</label>
-                                <input type="date" name="dof" id="dof">
+                                <input type="date" name="dof" id="dof" class="date-input">
                                 <div class="validation">
                                     <img src="./imiges/valid.png" alt="valid" class="validns" id="dofValid">
                                     <img src="./imiges/invalid.png" alt="invalid" class="invalidns" id="dofinValid">
@@ -211,16 +211,17 @@
                             </div>
                         </div>
 
-
+        
                         <div class="div-info-container">
-                            <div class="description-1">
-                                <label for="description-1">აღწერა</label>
-                                <textarea name="description-1" id="description-1" placeholder="განათლების აღწერა"></textarea>
-                            </div>
-                            <div class="validation">
-                                <img src="./imiges/valid.png" alt="valid" class="validns" id="description-1Valid">
-                                <img src="./imiges/invalid.png" alt="invalid" class="invalidns" id="description-1inValid">
-                            </div>
+                            <div class="">
+                                <label for="educationDescription">აღწერა</label>
+                                <div class="validation">
+                                    <img src="./imiges/valid.png" alt="valid" class="valide" id="educationDescriptionValid">
+                                    <img src="./imiges/invalid.png" alt="invalid" class="invalidv" id="educationDescriptioninValid">
+                                </div>
+                                <textarea name="educationDescription" id="educationDescription" class="textarea"
+                                    placeholder="განათლების აღწერა"></textarea>
+                                </div>
                         </div>
                         <hr>
                     </div>
@@ -230,7 +231,7 @@
                     </button>
                     <div class="pages" id="page-3-3">
                         <button type="button" class="pagebutton" id="pagi-2">უკან</button>
-                        <button type="submit">შემდეგი</button>
+                        <button type="submit" class="pagebutton" id="pagi-4">შემდეგი</button>
                     </div>
                 </div>
             </form>
