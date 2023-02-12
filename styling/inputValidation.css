@@ -35,7 +35,7 @@
     width: 16.5px;
     position: absolute;
     right:15.75px;
-    opacity: 0;
+    opacity:  0;
 }
 
 .invalidns{
@@ -45,6 +45,22 @@
     right: -35.5px;
     opacity: 0;
 }
+
+.valideImg{
+    width: 16.5px;
+position: absolute;
+bottom: 2.5px;
+left: 355px;
+opacity: 0;
+}
+.invalidvImg{
+    Width:21px;
+    Height:18.75px;
+    position: absolute;
+    bottom: 2.5px;
+    left: 355px;
+    opacity: 0;
+ }
 
 .invalid{
     opacity: 100;

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,13 +9,15 @@
     <link rel="stylesheet" href="./styling/personalInfo.css">
     <link rel="stylesheet" href="./styling/asideStyling.css">
     <link rel="stylesheet" href="./styling/inputValidation.css">
+    <link rel="stylesheet" href="./styling/experience.css">
     <title>cv generator</title>
 </head>
+
 <body>
     <main>
         <section>
-            <form >
-                <div class="" id="form-page-1" >
+            <form>
+                <div class="" id="form-page-1">
 
                     <header>
                         <a class="back-arrow" href="index.html"> <img src="./imiges/Vector.png" alt="back-arrow"> </a>
@@ -29,8 +32,8 @@
                             <label for="name">სახელი</label>
                             <input class="namesurname" type="text" name="name" id="name" placeholder="ანზორ">
                             <div class="validation">
-                                <img src="./imiges/valid.png" alt="valid" class="validns" id="nameValid" >
-                                <img src="./imiges/invalid.png" alt="invalid" class="invalidns" id="nameinValid" >
+                                <img src="./imiges/valid.png" alt="valid" class="validns" id="nameValid">
+                                <img src="./imiges/invalid.png" alt="invalid" class="invalidns" id="nameinValid">
                             </div>
                             <p>მინიმუმ 2 ასო, ქართული ასოები</p>
                         </div>
@@ -46,12 +49,16 @@
                         </div>
                     </div>
 
-                    <label class="">პირადი ფოტოს ატვირთვა </label>
-                    <button class="image-upload" id="iamge-upload"> <a>ატვირთვა</a><input class="image-upload-input" id="image-upload-input"  type="file" accept="Image/*" alt="submit"></button> 
-                    <!-- <div class="validation">
-                        <img src="./imiges/valid.png" alt="valid" class="valide" id="image-upload-inputValid">
-                        <img src="./imiges/invalid.png" alt="invalid" class="invalidv" id="image-upload-inputinValid">
-                    </div> -->
+                    
+                  <div class="div-info-container">
+                        <label for ="image-upload-input" id= 'image-upload-input-label' class="">პირადი ფოტოს ატვირთვა </label>
+                        <button class="image-upload" id="iamge-upload"> <a>ატვირთვა</a><input class="image-upload-input"
+                                id="image-upload-input" type="file" accept="Image/*" name="image-upload-input" alt="submit"></button>
+                        <div class="validation">
+                            <img src="./imiges/valid.png" alt="valid" class="valideImg" id="image-upload-inputValid">
+                            <img src="./imiges/invalid.png" alt="invalid" class="invalidvImg" id="image-upload-inputinValid">
+                        </div>
+                  </div>
 
                     <div class="more-info">
                         <div class="about-me">
@@ -62,29 +69,29 @@
                         <div class="div-info-container">
                             <label for="mail">ელ.ფოსტა</label>
                             <div class="validation">
-                                <img src="./imiges/valid.png" alt="valid" class="valide" id="mailValid" >
-                                <img src="./imiges/invalid.png" alt="invalid" class="invalidv" id="mailinValid" >
+                                <img src="./imiges/valid.png" alt="valid" class="valide" id="mailValid">
+                                <img src="./imiges/invalid.png" alt="invalid" class="invalidv" id="mailinValid">
                             </div>
-                            <input  class="mail" type="text" name="mail" id="mail" placeholder="anzorr666@redberry.ge">
+                            <input class="mail" type="text" name="mail" id="mail" placeholder="anzorr666@redberry.ge">
                             <p>უნდა მთავრდებოდეს @redberry.ge-ით</p>
                         </div>
 
                         <div class="div-info-container">
-                            <label for="phone" >მობილურის ნომერი</label>
+                            <label for="phone">მობილურის ნომერი</label>
                             <div class="validation">
                                 <img src="./imiges/valid.png" alt="valid" class="valide" id="phoneValid">
                                 <img src="./imiges/invalid.png" alt="invalid" class="invalidv" id="phoneinValid">
                             </div>
-                            <input class="phone" type="text" name="phone" id="phone"  placeholder="+995 551 12 34 56">
+                            <input class="phone" type="text" name="phone" id="phone" placeholder="+995 551 12 34 56">
                             <p>უნდა აკმაყოფილებდეს ქართული მობილურის ნომრის ფორმატს</p>
                         </div>
                     </div>
                     <div class="pages">
-                        <button  type="button" class="pagebutton" id="page-2">შემდეგი</button>
+                        <button type="button" class="pagebutton" id="page-2">შემდეგი</button>
                     </div>
                 </div>
 
-                <div class="form-page" id="form-page-2" >
+                <div class="form-page" id="form-page-2">
 
                     <header>
                         <a class="back-arrow" href="index.html"> <img src="./imiges/Vector.png" alt="back-arrow"> </a>
@@ -95,67 +102,74 @@
                     <hr>
 
                     <div class="experience" id="experience-div">
-    
-                        <div class="div-info-container">
+
+
+                        
+                        <div class="div-info-container" >
                             <label for="position">თანამდებობა</label>
                             <div class="validation">
-                                <img src="./imiges/valid.png" alt="valid" class="valide" id="positionValid" >
-                                <img src="./imiges/invalid.png" alt="invalid" class="invalidv" id="positioninValid" >
+                                <img src="./imiges/valid.png" alt="valid" class="valide" id="positionValid">
+                                <img src="./imiges/invalid.png" alt="invalid" class="invalidv" id="positioninValid">
                             </div>
                             <input class="info-input" type="text" name="position" id="position" placeholder="დეველოპერი, დიზაინერი, ა.შ.">
                             <p>მინიმუმ 2 სიმბოლო</p>
                         </div>
-    
+                        
                         <div class="div-info-container">
                             <label for="employer">დამსაქმებელი</label>
                             <div class="validation">
-                                <img src="./imiges/valid.png" alt="valid" class="valide" id="employerValid" >
-                                <img src="./imiges/invalid.png" alt="invalid" class="invalidv" id="employerinValid" >
+                                <img src="./imiges/valid.png" alt="valid" class="valide" id="employerValid">
+                                <img src="./imiges/invalid.png" alt="invalid" class="invalidv" id="employerinValid">
                             </div>
-                            <input class="info-input" type="text" name="employer" id="employer" placeholder="დამსაქმებელი">
+                            <input class="info-input" type="text" name="employer" id="employer"placeholder="დამსაქმებელი">
                             <p>მინიმუმ 2 სიმბოლო</p>
                         </div>
-    
+
                         <div class="date-box">
                             <div class="date-holder">
                                 <label for="dos">დაწყების რიცხვი</label>
                                 <input type="date" name="dos" id="dos">
                                 <div class="validation">
-                                    <img src="./imiges/valid.png" alt="valid" class="validns" id="" >
-                                    <img src="./imiges/invalid.png" alt="invalid" class="invalidns" id="" >
+                                    <img src="./imiges/valid.png" alt="valid" class="valide" id="dosValid">
+                                    <img src="./imiges/invalid.png" alt="invalid" class="invalidv" id="dosinValid">
                                 </div>
                             </div>
-    
+
                             <div class="date-holder">
                                 <label for="doff">დამთავრების რიცხვი</label>
-                                <input type="date" name="doff" id="doff" >
+                                <input type="date" name="doff" id="doff">
                                 <div class="validation">
-                                    <img src="./imiges/valid.png" alt="valid" class="validns" id="">
-                                    <img src="./imiges/invalid.png" alt="invalid" class="invalidns" id="">
+                                    <img src="./imiges/valid.png" alt="valid" class="valide" id="doffValid">
+                                    <img src="./imiges/invalid.png" alt="invalid" class="invalidv" id="doffinValid">
                                 </div>
                             </div>
                         </div>
-    
-                        <div class="">
+
+                        <div class="div-info-container">
                             <div class="">
                                 <label for="">აღწერა</label>
-                                <textarea name="about-me" id="" placeholder="როლი თანამდებობაზე დ ზოგდი აღწერა"></textarea>
-                            </div>
+                                <div class="validation">
+                                    <img src="./imiges/valid.png" alt="valid" class="valide" id="descriptionValid">
+                                    <img src="./imiges/invalid.png" alt="invalid" class="invalidv" id="descriptioninValid">
+                                </div>
+                                <textarea name="about-me" id="description"
+                                    placeholder="როლი თანამდებობაზე დ ზოგდი აღწერა"></textarea>
+                                </div>
                         </div>
                         <hr>
-                    </div >
-                    <div class="experiance" id = "experience-div-added"></div>
-                    <button class="add-button" id="experience"> 
+                    </div>
+                    <div class="experiance" id="experience-div-added"></div>
+                    <button class="add-button" id="experience">
                         მეტი გამოცდილების დამატება
                     </button>
 
-                    <div class="pages">
+                    <div class="pages" id="page-2-2">
                         <button type="button" class="pagebutton" id="page-1">უკან</button>
                         <button type="button" class="pagebutton" id="page-3">შემდეგი</button>
                     </div>
                 </div>
 
-                <div class="form-page" id="form-page-3" >
+                <div class="form-page" id="form-page-3">
 
                     <header>
                         <a class="back-arrow" href="index.html"> <img src="./imiges/Vector.png" alt="back-arrow"> </a>
@@ -169,53 +183,61 @@
                         <div class="div-info-container">
                             <label for="school">სასწვლებელი</label>
                             <div class="validation">
-                                <img src="./imiges/valid.png" alt="valid" class="valide" id="" >
-                                <img src="./imiges/invalid.png" alt="invalid" class="invalidv" id="" >
+                                <img src="./imiges/valid.png" alt="valid" class="valide" id="schoolValid">
+                                <img src="./imiges/invalid.png" alt="invalid" class="invalidv" id="schoolinValid">
                             </div>
                             <input class="info-input" type="text" name="school" id="school" placeholder="სასწვლებელი">
                             <p>მინიმუმ 2 სიმბოლო</p>
                         </div>
-    
+
                         <div class="date-box">
                             <div class="diploma">
                                 <label for="diploma">ხარისხი</label>
-                                <input class="info-input" type="text" name="diploma" id="diploma" placeholder="აირჩიე ხარისხი">
+                                <input class="info-input" type="text" name="diploma" id="diploma"
+                                    placeholder="აირჩიე ხარისხი">
                                 <div class="validation">
-                                    <img src="./imiges/valid.png" alt="valid" class="validns" id="" >
-                                    <img src="./imiges/invalid.png" alt="invalid" class="invalidns" id="" >
+                                    <img src="./imiges/valid.png" alt="valid" class="validns" id="diplomaValid">
+                                    <img src="./imiges/invalid.png" alt="invalid" class="invalidns" id="diplomainValid">
                                 </div>
                             </div>
-    
+
                             <div class="date-holder">
                                 <label for="dof">დამთავრების რიცხვი</label>
-                                <input type="date" name="dof" id="dof" >
+                                <input type="date" name="dof" id="dof">
                                 <div class="validation">
-                                    <img src="./imiges/valid.png" alt="valid" class="validns" id="">
-                                    <img src="./imiges/invalid.png" alt="invalid" class="invalidns" id="">
+                                    <img src="./imiges/valid.png" alt="valid" class="validns" id="dofValid">
+                                    <img src="./imiges/invalid.png" alt="invalid" class="invalidns" id="dofinValid">
                                 </div>
                             </div>
                         </div>
-    
-                
-                        <div class="">
-                            <div class="">
-                                <label for="">აღწერა</label>
-                                <textarea name="about-me" id="" placeholder="განათლების აღწერა"></textarea>
+
+
+                        <div class="div-info-container">
+                            <div class="description-1">
+                                <label for="description-1">აღწერა</label>
+                                <textarea name="description-1" id="description-1" placeholder="განათლების აღწერა"></textarea>
+                            </div>
+                            <div class="validation">
+                                <img src="./imiges/valid.png" alt="valid" class="validns" id="description-1Valid">
+                                <img src="./imiges/invalid.png" alt="invalid" class="invalidns" id="description-1inValid">
                             </div>
                         </div>
                         <hr>
                     </div>
                     <div class="education" id="education-div-added"></div>
-                    <button class="add-button" id="education"> 
+                    <button class="add-button" id="education">
                         სხვა სასწვლებელის დამატება
                     </button>
-                    <div class="pages">
-                        <button type="button" class="pagebutton" id="page-2" >უკან</button>
+                    <div class="pages" id="page-3-3">
+                        <button type="button" class="pagebutton" id="pagi-2">უკან</button>
                         <button type="submit">შემდეგი</button>
                     </div>
                 </div>
             </form>
         </section>
+
+
+
         <aside>
             <div class="name-surnameViwe">
                 <h2>
@@ -255,4 +277,5 @@
 </body>
 <script src="main.js"></script>
 <script src="image-upload.js"></script>
+
 </html>

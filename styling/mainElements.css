@@ -26,13 +26,18 @@ header a:first-of-type{
 }
 section{
     width: 1098px;
-    padding: 47px 150px 0px;
+    padding: 47px 0px 0px;
     background-color: #F9F9F9;
 }
 
 aside{
     padding: 68px 75px 0px 80px;
     width: 822px;
+}
+form{
+    overflow: auto;
+    width: 100%;
+    padding: 0px 150px 0px 150px;
 }
 
 h1{
