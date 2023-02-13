@@ -22,7 +22,7 @@ form.addEventListener('keyup', e => {
     var elementId = e.target
     var className = e.target.className
     var liveText = e.target.value
-    var outpudId = e.target.id + 'Viwe'
+    var outpudId = e.target.id + 'View'
     //--//
 
     localStorage.setItem(e.target.id , liveText)
@@ -78,7 +78,7 @@ const validationFunction = (clssname, regex, text, elementId) => {
 const validInputIcon = (validation, elementId) => {
     // generates icon Id based on input id
     var valid = elementId.id + 'Valid'
-    var inValid = elementId.id + 'inValid'
+    var inValid = elementId.id + 'inVld'
     // selects an icon based on generated Id
     var validId = document.getElementById(valid)
     var inValidId = document.getElementById(inValid)
@@ -141,6 +141,8 @@ const addButtonFunction = (element) => {
     var whatToClone = element.id + '-div'
     var whereToClone = whatToClone + '-added'
     
+
+
     count ++
     if (element.className !== 'add-button') {
         return
@@ -148,51 +150,59 @@ const addButtonFunction = (element) => {
     
     const node = document.getElementById(whatToClone);
     const clone = node.cloneNode(true);
-    recursiveSearchInputElement(clone)
+    var cloneNodes = clone.querySelectorAll('INPUT , TEXTAREA , LABEL , IMG')
+    nextPageValidtion1(cloneNodes)
     document.getElementById(whereToClone).appendChild(clone);
 
 }
 
 
-function recursiveSearchInputElement(elementNode) {
+// function recursiveSearchInputElement(elementNode, selectedNodes) {
 
-    if (elementNode.children.length > 0) {
-        for (const node of elementNode.children) {
-            recursiveSearchInputElement(node)
+//     if (elementNode.children.length > 0) {
+//         for (const node of elementNode.children) {
+//             recursiveSearchInputElement(node)
            
             
-        }
-    } else if (elementNode.nodeName === 'INPUT' || elementNode.nodeName === 'TEXTAREA' ) {
-        elementNode.value = ''
-        elementNode.id+=count
-    }
-}
+//         }
+//     } else if (selectedNodes.value!==0) {
+//         elementNode.value = ''
+//         elementNode.id+=count
+//     }
+// }
 
-
-
-function sddfdddgg(elementNode) {
-    
-    var count = 0
-    var inputs=  elementNode.nodeName === 'INPUT'
-    if (elementNode.length > 0) {
-        for (const node of elementNode) {
-            sddfgg(node)
-           //console.log(node.classList.contains('namesurname'))
-            
-        }
-    } else if (inputs || elementNode.classList.contains('error')) {
-        if (elementNode.value ==="" || elementNode.classList.contains('error')){
-            elementNode.labels.item(0).style.color = '#E52F2F'
-
-            console.log('ცუდიაა')
-            
-        } else{
+function nextPageValidtion1(elementNode ) {
         
-            elementNode.labels.item(0).style.color = '#000000'
-            console.log('good')
-    }
-}
-}
+        for (i = 0 ; i < elementNode.length; i++) {
+            node = elementNode.item(i)
+            
+            
+            
+            
+            //reset styling
+            node.classList.remove('invalid')
+            node.classList.remove('valid')
+            node.classList.remove('error')
+            node.classList.remove('success')
+            node.style.color = '#000000'          
+            // clears clone values 
+            if (node.value !== undefined){
+                node.value=''
+                node.id+=count
+            }
+            // connect labels to inputs
+            if (node.nodeName === "LABEL"){
+                node.htmlFor+=count
+                node.id+=count
+            }
+            if (node.nodeName ==="IMG" && (node.classList.contains('valide' ) || node.classList.contains('validns' )) ){
+                node.id= node.id.slice(0,-5)+count+'Valid'               
+            }
+            if (node.nodeName ==="IMG" && (node.classList.contains('invalidv' ) || node.classList.contains('invalidns' )) ){
+                node.id= node.id.slice(0,-5)+count+'inVld'               
+            }
+        }      
+} 
 
 // 
 function nextPageValidtion(elementNode ) {
@@ -201,7 +211,7 @@ function nextPageValidtion(elementNode ) {
             node = elementNode.item(i)
              
             nodeIdV = node.id+'Valid'
-            nodeIdIn = node.id+'inValid'
+            nodeIdIn = node.id+'inVld'
 
             var validId = document.getElementById(nodeIdV)
             var inValidId = document.getElementById(nodeIdIn)
@@ -235,7 +245,7 @@ function nextPageValidtion(elementNode ) {
         var page1 = document.getElementById('form-page-1')
         var page2 = document.getElementById('form-page-2')
         var page3 = document.getElementById('form-page-3')
-        var page1Input = page1.getElementsByTagName('INPUT')
+        var page1Input = page1.querySelectorAll('INPUT')
             pageCounter = +(elementId).charAt((elementId).length - 1)      
         if (pageCounter === 2 && nextPageValidtion(page1Input) ===0) {
             page1.classList.add('passive')

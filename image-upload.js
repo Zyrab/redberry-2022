@@ -25,7 +25,7 @@ photo.addEventListener('change', e=>{
     profileImg.splice(file[0])
 
     var valid = e.target.id+'Valid'
-    var inValid = e.target.id+'inValid'
+    var inValid = e.target.id+'inVld'
     var validId = document.getElementById(valid)
     var inValidId = document.getElementById(inValid)
     var label = document.getElementById('image-upload-input-label')
