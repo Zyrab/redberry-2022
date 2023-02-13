@@ -193,8 +193,11 @@
                         <div class="date-box">
                             <div class="diploma">
                                 <label for="diploma">ხარისხი</label>
-                                <input class="info-input" type="text" name="diploma" id="diploma"
-                                    placeholder="აირჩიე ხარისხი">
+                                <select class="info-input" name="diploma" id="diploma"  >
+                                    <option value="">აირჩიე ხარისხი</option>
+                                </select>
+                                <!-- <input class="info-input" type="select" name="diploma" id="diploma"
+                                    placeholder="აირჩიე ხარისხი"> -->
                                 <div class="validation">
                                     <img src="./imiges/valid.png" alt="valid" class="validns" id="diplomaValid">
                                     <img src="./imiges/invalid.png" alt="invalid" class="invalidns" id="diplomainVld">
@@ -287,7 +290,8 @@
                 <hr>
             </div>
             <div id="experience-divView-added"></div>
-            <div class="eductionView" id="eduction-divView">
+
+            <div class="eductionView" id="education-divView">
                 <h3>განათლება</h3>
 
                 <div  class="schoool">
@@ -302,7 +306,7 @@
                 </div>
                 <hr>
             </div>
-            <div id="eduction-divView-added"></div>
+            <div id="education-divView-added"></div>
             <div>
                 <div>
                     <img src="./imiges/LOGO-12 1.png" alt="">
@@ -314,5 +318,6 @@
 </body>
 <script src="main.js"></script>
 <script src="image-upload.js"></script>
+<script src="api.js"></script>
 
 </html>

@@ -166,6 +166,7 @@ const addButtonFunction = (element) => {
 
 }
 
+//clone id generator, value reset
 function addSectionForAddingMoreInfo(elementNode ) {        
         for (i = 0 ; i < elementNode.length; i++) {
             node = elementNode.item(i)            
@@ -194,7 +195,6 @@ function addSectionForAddingMoreInfo(elementNode ) {
             if (node.nodeName ==="H4" || node.nodeName ==="SPAN" || node.nodeName ==="P" ){
                 node.innerText =""
                 node.id= node.id.slice(0,-4)+count+'View'
-                console.log(node.id)
             }
         }      
 } 
@@ -242,7 +242,7 @@ function nextPageValidtion(elementNode ) {
         var page3 = document.getElementById('form-page-3')
         var page1Input = page1.querySelectorAll('INPUT')
             pageCounter = +(elementId).charAt((elementId).length - 1)      
-        if (pageCounter === 2 && nextPageValidtion(page1Input) ===5) {
+        if (pageCounter === 2 && nextPageValidtion(page1Input) ===0) {
             page1.classList.add('passive')
             page1.classList.remove('active')
             page2.classList.add('active')
@@ -304,12 +304,18 @@ function nextPageValidtion(elementNode ) {
         //data input validtion
     form.addEventListener('change', e =>{
         const dateInput = e.target.type === 'date';
-    if (!dateInput) {
+        const optionInput = e.target.nodeName ==='SELECT'
+    if (!dateInput && !optionInput) {
         return; 
     }
-
+        var outpudId = e.target.id + 'View'
+        console.log(e.target.value)
+        document.getElementById(outpudId).innerHTML=e.target.value 
         var validation =  (e.target.valueAsNumber !== 0 )
             validInputIcon  ( validation, e.target)
 
 
     })
+
+
+    

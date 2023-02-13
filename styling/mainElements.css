@@ -67,7 +67,7 @@ label{
     color: #000000;
 }
 
-input , textarea{
+input , textarea {
     margin-top: 8px;
     margin-bottom: 8px;
     font-weight: 700;
@@ -79,8 +79,26 @@ input , textarea{
     border: 1px solid #BCBCBC;
     border-radius: 4px;
     padding-left: 16px;
+    padding-right: 14px;
     color: #000000;
 }
+select{
+    outline: none;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 21px;
+    height: 48px;
+    width: 100%;
+    background: #FFFFFF;
+    border: 1px solid #BCBCBC;
+    border-radius: 4px;
+    padding-left: 16px;
+    padding-right: 19px;
+    color: #000000;
+}
+
 input:focus , textarea:focus{
     outline: 0;
 }
