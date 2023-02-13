@@ -1,11 +1,36 @@
 
-.name-surname1{
+.name-surnameView{
     display: flex;
     gap: 20px;
     margin-bottom: 17px;
+    height: 42px ;
+    width: 100%;
 }
 
+.contacts {
+    margin-bottom: 34px;
+    height:32px ;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: space-between;
+}
+.contact{
+    display: flex;
+    align-items: center;
+    gap: 12px;
 
+}
+h3{
+font-family: 'Helvetica Neue';
+font-style: normal;
+font-weight: 900;
+font-size: 18px;
+line-height: 22px;
+color: #F93B1D;
+margin-bottom: 15px;
+
+}
 .user-img{
     position: relative;
 }
@@ -16,9 +41,40 @@
     border-radius: 133px;
     overflow: hidden;
     right: 0;
-    top: -130px;
+    top:-170px;
  
 }
 .image img{
     width: 100%;
+}
+aside hr{
+    margin-bottom: 25px;
+    border: 1px solid #C8C8C8;
+}
+
+h4{
+    font-family: 'Helvetica Neue';
+font-style: normal;
+font-weight: 700;
+font-size: 16px;
+line-height: 20px;
+color: #1A1A1A;
+}
+span{
+    font-family: 'Helvetica Neue';
+font-style: italic;
+font-weight: 400;
+font-size: 16px;
+line-height: 19px;
+color: #919191;
+}
+
+aside p {
+    font-family: 'Helvetica Neue';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 22px;
+color: #000000;
+
 }

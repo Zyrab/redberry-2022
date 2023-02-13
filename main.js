@@ -29,7 +29,7 @@ form.addEventListener('keyup', e => {
 
 
     //live text generator      
-   // document.getElementById(outpudId).innerHTML=liveText 
+    document.getElementById(outpudId).innerHTML=liveText 
 
     //--//
 
@@ -140,8 +140,10 @@ var count = 0
 const addButtonFunction = (element) => {
     var whatToClone = element.id + '-div'
     var whereToClone = whatToClone + '-added'
+    var whatToCloneView = element.id + '-divView'
+    var whereToCloneView = whatToCloneView + '-added'
     
-
+    
 
     count ++
     if (element.className !== 'add-button') {
@@ -150,35 +152,23 @@ const addButtonFunction = (element) => {
     
     const node = document.getElementById(whatToClone);
     const clone = node.cloneNode(true);
+
+    const nodeView = document.getElementById(whatToCloneView);
+    const cloneView = nodeView.cloneNode(true);
+
     var cloneNodes = clone.querySelectorAll('INPUT , TEXTAREA , LABEL , IMG')
-    nextPageValidtion1(cloneNodes)
+    var cloneNodesView = cloneView.querySelectorAll('H4 , SPAN , P')
+    addSectionForAddingMoreInfo(cloneNodes)
+    addSectionForAddingMoreInfo(cloneNodesView)
+
+    document.getElementById(whereToCloneView).appendChild(cloneView);
     document.getElementById(whereToClone).appendChild(clone);
 
 }
 
-
-// function recursiveSearchInputElement(elementNode, selectedNodes) {
-
-//     if (elementNode.children.length > 0) {
-//         for (const node of elementNode.children) {
-//             recursiveSearchInputElement(node)
-           
-            
-//         }
-//     } else if (selectedNodes.value!==0) {
-//         elementNode.value = ''
-//         elementNode.id+=count
-//     }
-// }
-
-function nextPageValidtion1(elementNode ) {
-        
+function addSectionForAddingMoreInfo(elementNode ) {        
         for (i = 0 ; i < elementNode.length; i++) {
-            node = elementNode.item(i)
-            
-            
-            
-            
+            node = elementNode.item(i)            
             //reset styling
             node.classList.remove('invalid')
             node.classList.remove('valid')
@@ -200,6 +190,11 @@ function nextPageValidtion1(elementNode ) {
             }
             if (node.nodeName ==="IMG" && (node.classList.contains('invalidv' ) || node.classList.contains('invalidns' )) ){
                 node.id= node.id.slice(0,-5)+count+'inVld'               
+            }
+            if (node.nodeName ==="H4" || node.nodeName ==="SPAN" || node.nodeName ==="P" ){
+                node.innerText =""
+                node.id= node.id.slice(0,-4)+count+'View'
+                console.log(node.id)
             }
         }      
 } 
@@ -247,7 +242,7 @@ function nextPageValidtion(elementNode ) {
         var page3 = document.getElementById('form-page-3')
         var page1Input = page1.querySelectorAll('INPUT')
             pageCounter = +(elementId).charAt((elementId).length - 1)      
-        if (pageCounter === 2 && nextPageValidtion(page1Input) ===0) {
+        if (pageCounter === 2 && nextPageValidtion(page1Input) ===5) {
             page1.classList.add('passive')
             page1.classList.remove('active')
             page2.classList.add('active')
@@ -306,7 +301,7 @@ function nextPageValidtion(elementNode ) {
 
 
 
-
+        //data input validtion
     form.addEventListener('change', e =>{
         const dateInput = e.target.type === 'date';
     if (!dateInput) {
