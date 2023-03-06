@@ -2,20 +2,6 @@
 const form = document.querySelector('form')
 
 
-var nnm=document.getElementById('name')
-window.onload = function(){
-    
-   var fnnm = localStorage.getItem('name')
-   nnm.value=fnnm
-   localStorage.clear()
-
-};
-    form.addEventListener('load', e => {
-
-        localStorage.length
-        console.log(localStorage.getItem('surname'))
-    })
-
 // form keyup event listener. 
 form.addEventListener('keyup', e => {
     //variables
@@ -25,8 +11,10 @@ form.addEventListener('keyup', e => {
     var outpudId = e.target.id + 'View'
     //--//
 
-    localStorage.setItem(e.target.id , liveText)
-
+    //for phone number formating
+    if(e.target.id === "phone") {
+        e.target.value= autoFormatPhoneNumber(e.target.value)     
+    }
 
     //live text generator      
     document.getElementById(outpudId).innerHTML=liveText 
@@ -38,7 +26,7 @@ form.addEventListener('keyup', e => {
     var onlyGeorgian = /^[ა-ჰ]{2,}$/
     var min2Symbol = /^[ა-ჰa-zA-Z0-9.!#$%&'*+/=?^_` {|}~-]{2,}/
     var textarea = /^[ა-ჰa-zA-Z0-9.!#$%&'*+/=?^_` {|}~-]/
-    var phoneNumber = /^\+9955\d{8}$/
+    var phoneNumber = /^(\+995)(\s5)(\d{2})(\s\d{2})(\s\d{2})(\s\d{2})$/
     var mailText = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@redberry.ge/
 
     //
@@ -65,7 +53,7 @@ const classNameMaker = (targetClass, elementClass) => {
     return className
 }
 
-// validtes a input text based on regex
+// validtes an input text based on regex
 const validationFunction = (clssname, regex, text, elementId) => {
     var validRegex = regex.test(text.trim())
     if (clssname) {
@@ -82,7 +70,6 @@ const validInputIcon = (validation, elementId) => {
     // selects an icon based on generated Id
     var validId = document.getElementById(valid)
     var inValidId = document.getElementById(inValid)
-
     if (validation) {
         // icon display
         validId.classList.add('valid')
@@ -135,40 +122,37 @@ form.addEventListener('click', e => {
 })
 
 
-// clone function
-var count = 0
-const addButtonFunction = (element) => {
-    var whatToClone = element.id + '-div'
-    var whereToClone = whatToClone + '-added'
-    var whatToCloneView = element.id + '-divView'
-    var whereToCloneView = whatToCloneView + '-added'
-    
-    
+    // clone function
+        var count = 0
+    const addButtonFunction = (element) => {
+        //selecting form element to clone
+        var whatToClone = element.id + '-div'
+        var whereToClone = whatToClone + '-added'
+        var whatToCloneView = element.id + '-divView'
+        var whereToCloneView = whatToCloneView + '-added'
+        // targets only buttons for cloning
+        count ++
+        if (element.className !== 'add-button') {
+            return
+        }
+        const node = document.getElementById(whatToClone);
+        const clone = node.cloneNode(true);
+        const nodeView = document.getElementById(whatToCloneView);
+        const cloneView = nodeView.cloneNode(true);
+        // selectiong elements to generate id dinamicly
+        var cloneNodes = clone.querySelectorAll('INPUT , TEXTAREA , LABEL , IMG ,SELECT')
+        var cloneNodesView = cloneView.querySelectorAll('H4 , SPAN , P')
+        addSectionForAddingMoreInfo(cloneNodes)
+        addSectionForAddingMoreInfo(cloneNodesView)
 
-    count ++
-    if (element.className !== 'add-button') {
-        return
+        document.getElementById(whereToCloneView).appendChild(cloneView);
+        document.getElementById(whereToClone).appendChild(clone);
+
     }
-    
-    const node = document.getElementById(whatToClone);
-    const clone = node.cloneNode(true);
-
-    const nodeView = document.getElementById(whatToCloneView);
-    const cloneView = nodeView.cloneNode(true);
-
-    var cloneNodes = clone.querySelectorAll('INPUT , TEXTAREA , LABEL , IMG')
-    var cloneNodesView = cloneView.querySelectorAll('H4 , SPAN , P')
-    addSectionForAddingMoreInfo(cloneNodes)
-    addSectionForAddingMoreInfo(cloneNodesView)
-
-    document.getElementById(whereToCloneView).appendChild(cloneView);
-    document.getElementById(whereToClone).appendChild(clone);
-
-}
 
 //clone id generator, value reset
 function addSectionForAddingMoreInfo(elementNode ) {        
-        for (i = 0 ; i < elementNode.length; i++) {
+    for (i = 0 ; i < elementNode.length; i++) {
             node = elementNode.item(i)            
             //reset styling
             node.classList.remove('invalid')
@@ -186,20 +170,20 @@ function addSectionForAddingMoreInfo(elementNode ) {
                 node.htmlFor+=count
                 node.id+=count
             }
-            if (node.nodeName ==="IMG" && (node.classList.contains('valide' ) || node.classList.contains('validns' )) ){
+            if (node.nodeName ==="IMG" && (node.classList.contains('valide') || node.classList.contains('validns') || node.classList.contains('validd')) ){
                 node.id= node.id.slice(0,-5)+count+'Valid'               
             }
-            if (node.nodeName ==="IMG" && (node.classList.contains('invalidv' ) || node.classList.contains('invalidns' )) ){
+            if (node.nodeName ==="IMG" && (node.classList.contains('invalidv') || node.classList.contains('invalidns') || node.classList.contains('invalidd')) ){
                 node.id= node.id.slice(0,-5)+count+'inVld'               
             }
             if (node.nodeName ==="H4" || node.nodeName ==="SPAN" || node.nodeName ==="P" ){
                 node.innerText =""
                 node.id= node.id.slice(0,-4)+count+'View'
             }
-        }      
+    }      
 } 
 
-// 
+// cheks if all the inputs are filled in the current page
 function nextPageValidtion(elementNode ) {
     var error = []
         for (i = 0 ; i < elementNode.length; i++) {
@@ -224,6 +208,7 @@ function nextPageValidtion(elementNode ) {
                 node.labels.item(0).style.color = '#000000'  
            //error.splice(node)
             }
+
         }
        return error.length
        
@@ -281,7 +266,7 @@ function nextPageValidtion(elementNode ) {
         var page1 = document.getElementById('form-page-1')
         var page2 = document.getElementById('form-page-2')
         var page3 = document.getElementById('form-page-3')
-        var page3Input = page3.querySelectorAll('INPUT , TEXTAREA')
+        var page3Input = page3.querySelectorAll('INPUT , TEXTAREA , SELECT')
             pageCounter = +(elementId).charAt((elementId).length - 1)
         if (pageCounter === 2) {
             page1.classList.add('passive')
@@ -294,28 +279,43 @@ function nextPageValidtion(elementNode ) {
         
         if (pageCounter === 4 && nextPageValidtion(page3Input) ===0) {       
         }
-        }
+    }
 
 
-
-
-
-
-        //data input validtion
+        //date && select input validator
     form.addEventListener('change', e =>{
+        // to target only date and select input types
         const dateInput = e.target.type === 'date';
         const optionInput = e.target.nodeName ==='SELECT'
     if (!dateInput && !optionInput) {
         return; 
     }
         var outpudId = e.target.id + 'View'
-        console.log(e.target.value)
         document.getElementById(outpudId).innerHTML=e.target.value 
-        var validation =  (e.target.valueAsNumber !== 0 )
+        var validation =  (e.target.valueAsNumber !== 0 ||e.target.value !=='')
             validInputIcon  ( validation, e.target)
-
 
     })
 
 
     
+        //phone number editor
+        function autoFormatPhoneNumber(phoneNumberString) {
+            try {
+            var cleaned = ("" + phoneNumberString).replace(/\D/g, "");
+            var match = cleaned.match(/^(995)?(\d{0,3})?(\d{0,2})?(\d{0,2})?(\d{0,2})?$/);
+            var intlCode = match[1] ? "+995" : "";
+            return [intlCode, 
+                    match[2] ? " ": "",
+                    match[2], 
+                    match[3] ? " ": "",
+                    match[3],
+                    match[4] ? " ": "",
+                    match[4],
+                    match[5] ? " ": "",
+                    match[5]
+                    ].join("");
+            } catch (err) {
+            return "";
+            }
+        }

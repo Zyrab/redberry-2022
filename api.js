@@ -3,7 +3,7 @@
 fetch('https://resume.redberryinternship.ge/api/degrees')
 .then(res =>{ return res.json()})
 .then(data => {
-    var options = ''
+    var options = ' <option value="" disabled selected >აირჩიე ხარისხი</option>'
     data.forEach(element = (option) => {
         options+=`<option value="${option.title}" id="${option.id}">${option.title}</option>`
     });

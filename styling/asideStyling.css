@@ -19,16 +19,18 @@
     display: flex;
     align-items: center;
     gap: 12px;
+    opacity: 0;
 
 }
 h3{
-font-family: 'Helvetica Neue';
-font-style: normal;
-font-weight: 900;
-font-size: 18px;
-line-height: 22px;
-color: #F93B1D;
-margin-bottom: 15px;
+    opacity: 0;
+    font-family: 'Helvetica Neue';
+    font-style:condensed;
+    font-weight: 900;
+    font-size: 18px;
+    line-height: 22px;
+    color: #F93B1D;
+    margin-bottom: 15px;
 
 }
 .user-img{
@@ -41,7 +43,7 @@ margin-bottom: 15px;
     border-radius: 133px;
     overflow: hidden;
     right: 0;
-    top:-170px;
+    top:-150px;
  
 }
 .image img{
@@ -50,23 +52,31 @@ margin-bottom: 15px;
 aside hr{
     margin-bottom: 25px;
     border: 1px solid #C8C8C8;
+    opacity: 0;
 }
 
+.work, .schoool{
+    display: flex;
+    margin-bottom: 7px;
+}
+.date-of-work, .date-of-school{
+    margin-bottom: 16px;
+}
 h4{
     font-family: 'Helvetica Neue';
-font-style: normal;
-font-weight: 700;
-font-size: 16px;
-line-height: 20px;
-color: #1A1A1A;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    color: #1A1A1A;
 }
 span{
     font-family: 'Helvetica Neue';
-font-style: italic;
-font-weight: 400;
-font-size: 16px;
-line-height: 19px;
-color: #919191;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #919191;
 }
 
 aside p {
@@ -77,4 +87,19 @@ font-size: 16px;
 line-height: 22px;
 color: #000000;
 
+}
+.about-meview{
+    width: 70%;
+    margin-bottom: 19px;
+}
+.description{
+    margin-bottom: 32px;
+}
+.LOGO-12{
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 44px;
+}
+.filled{
+    opacity: 100;
 }

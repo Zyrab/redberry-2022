@@ -45,6 +45,22 @@
     right: -35.5px;
     opacity: 0;
 }
+.validd{
+    top: 5px;
+    width: 16.5px;
+    position: absolute;
+    right: -35.5px;
+    opacity:  0;
+}
+
+.invalidd{
+    Width:21px;
+    Height:18.75px;
+    position: absolute;
+    top: 5px;
+    right: -35.5px;
+    opacity: 0;
+}
 
 .valideImg{
     width: 16.5px;
