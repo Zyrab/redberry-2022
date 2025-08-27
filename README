@@ -1,0 +1,65 @@
+# Redberry Bootcamp Assignment — 2023 & Remake (2025)
+
+This repository contains my original **Redberry Bootcamp assignment** from February 2023, and a **remade version (2025)** built with my own DOM utility library — [Domo](https://github.com/zyrab/domo).
+
+---
+
+## Background
+
+In 2023, I applied to join the Redberry Bootcamp.  
+The assignment was to build a **live CV generator** based on a provided Figma design, with validation and multiple form pages.
+
+At that time, I was new to serious web development. I built everything with plain **HTML + JavaScript**, no modules, no frameworks. For dynamic “pages” I manually hid and showed sections, and for validation I wrote regex-based checks (a bit overcomplicated, but they worked!).
+
+The code wasn’t terrible, but I didn’t finish all requirements. I submitted anyway and was rejected. Still, it was a huge learning step for me.
+
+---
+
+## The Remake (2025)
+
+Now I’m revisiting this project to rebuild it from scratch, using my current knowledge and **Domo**, a lightweight DOM manipulation library I created.
+
+### Key points of the remake:
+
+- Built with **modular components** (using Domo)
+- Real-time **form validation** with cleaner handling
+- **Live CV preview**: form on the left, CV preview on the right
+- **SPA-style navigation** for multiple form pages
+- Future features:
+  - Save user inputs with **localStorage** or **sessionStorage** (TBD)
+  - Export CV as **PDF**
+
+This isn’t meant to be a polished product — it’s an experiment to test Domo in a real project and see how efficient I can make it without relying on a state manager.
+
+---
+
+## Repository Structure
+
+- `legacy/2022` → Available via Git tag: [`v1.0-2022`](../../tree/v1.0-2022)
+- `src/` → Current remake (2025) code
+
+---
+
+## Running the project
+
+```bash
+# clone the repo
+git clone https://github.com/Zyrab/redberry-2022
+
+cd yredberry-2022
+
+# run node serve.js (if using node.js)
+# or use a simple dev server (recommended)
+npx serve
+```
+
+## Tags
+
+v1.0-2022 → Original bootcamp submission (February 2023)
+
+latest → Ongoing remake with Domo (2025)
+
+## Notes
+
+This project is primarily for learning and experimenting.
+The old version shows how I started; the remake shows how I’ve grown.
