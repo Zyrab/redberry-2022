@@ -8,10 +8,12 @@ import createFormHeader from "../../components/form-header.js";
 
 import inputValidator from "../../hendlers/input-validator.js";
 import pageHandler from "../../hendlers/page-handler.js";
+import addHandler from "../../hendlers/add-handler.js";
 
 export default async function createGenerator() {
   const form = [createPersonalInfo(), createExpereience(), await createEducation()];
   let page = 0;
+  let index = 0;
   let header = createFormHeader("პირადი ინფო", 0);
   return Domo("section")
     .onClosest()
@@ -20,6 +22,7 @@ export default async function createGenerator() {
     .on("change", inputValidator)
     .onClosest("click", {
       ".page-button": (e, btn) => ({ page, header } = pageHandler(e, btn, form, page, header)),
+      ".add-button": async (e, btn) => (index = await addHandler(e, btn, index)),
     })
     .child([header, Domo("form").child([form[0], form[1].show(false), form[2].show(false), createPageButtons()])]);
 }
