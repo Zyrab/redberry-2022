@@ -1,19 +1,20 @@
 import Domo from "@zyrab/domo";
 
-import createFormHeader from "../../components/form-header.js";
 import createTextInput from "../../components/input-text.js";
 import createImgInput from "../../components/input-img.js";
 
 export default function createPersonalInfo() {
-  return Domo("fieldset").child([
-    Domo()
-      .cls("flex g-2")
-      .child([createTextInput(infoContent.name), createTextInput(infoContent.surname)]),
-    createImgInput({ id: "img-upload", label: "პირადი ფოტოს ატვირთვა" }),
-    createTextInput(infoContent.aboutMe),
-    createTextInput(infoContent.email),
-    createTextInput(infoContent.phone),
-  ]);
+  return Domo("fieldset")
+    .id("fieldset-0")
+    .child([
+      Domo()
+        .cls("flex g-2")
+        .child([createTextInput(infoContent.name), createTextInput(infoContent.surname)]),
+      createImgInput({ id: "img-upload", label: "პირადი ფოტოს ატვირთვა" }),
+      createTextInput(infoContent.aboutMe),
+      createTextInput(infoContent.email),
+      createTextInput(infoContent.phone),
+    ]);
 }
 
 const infoContent = {
