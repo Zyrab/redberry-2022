@@ -17,7 +17,6 @@ export default function inputValidator(e) {
     isValid = input.valueAsNumber > 0 || input.value !== "";
   } else if (filter === "file") {
     isValid = input.files.length > 0;
-    toggleClasses = false;
   }
 
   toggleValidationUI(input, isValid, { toggleClasses });
