@@ -1,138 +1,122 @@
 @font-face {
-    font-family: "HelveticaNeue";
-    src: url("../fonts/HelveticaNeue.ttc");
+  font-family: "HelveticaNeue";
+  src: url("../fonts/HelveticaNeue.ttc");
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "HelveticaNeue";
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "HelveticaNeue";
 }
-main{
-    height: 1080px;
-    display: flex;
-}
-
-header{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-header a:first-of-type{
-    position: absolute;
-    transform: translate(-78px);
-
-}
-section{
-    width: 1098px;
-    padding: 47px 0px 0px;
-    background-color: #F9F9F9;
+main {
+  height: 1080px;
+  display: flex;
 }
 
-aside{
-    padding: 68px 75px 0px 80px;
-    width: 822px;
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-form{
-    overflow: auto;
-    width: 100%;
-    padding: 0px 150px 0px 150px;
+header a:first-of-type {
+  position: absolute;
+  transform: translate(-78px);
+}
+section {
+  width: 1098px;
+  padding: 47px 0px 0px;
+  background-color: #f9f9f9;
 }
 
-h1{
-    font-style: normal;
-    font-weight: 900;
-    font-size: 24px;
-    line-height: 29px;
-    color: #1A1A1A;
-    margin-bottom: 12px;
+aside {
+  padding: 68px 75px 0px 80px;
+  width: 822px;
 }
-h2{
-    font-weight: 700;
-    font-size: 34px;
-    line-height: 42px;
-    color: #F93B1D;
+form {
+  overflow: auto;
+  width: 100%;
+  padding: 0px 150px 0px 150px;
+}
+
+h1 {
+  font-style: normal;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 29px;
+  color: #1a1a1a;
+  margin-bottom: 12px;
+}
+h2 {
+  font-weight: 700;
+  font-size: 34px;
+  line-height: 42px;
+  color: #f93b1d;
 }
 
 hr {
-    border: 1px solid #1A1A1A;
-    margin-bottom: 77px;
+  border: 1px solid #1a1a1a;
+  margin-bottom: 77px;
 }
 
-label{
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 21px;
-    color: #000000;
+label {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 21px;
+  color: #000000;
 }
 
-input , textarea {
-    margin-top: 8px;
-    margin-bottom: 8px;
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 21px;
-    height: 48px;
-    width: 100%;
-    background: #FFFFFF;
-    border: 1px solid #BCBCBC;
-    border-radius: 4px;
-    padding-left: 16px;
-    padding-right: 14px;
-    color: #000000;
+input,
+textarea {
+  margin-top: 8px;
+  margin-bottom: 8px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 21px;
+  height: 48px;
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid #bcbcbc;
+  border-radius: 4px;
+  padding-left: 16px;
+  padding-right: 14px;
+  color: #000000;
 }
-select{
-    outline: none;
-    margin-top: 8px;
-    margin-bottom: 8px;
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 21px;
-    height: 48px;
-    width: 100%;
-    background: #FFFFFF;
-    border: 1px solid #BCBCBC;
-    border-radius: 4px;
-    padding-left: 16px;
-    padding-right: 19px;
-    color: #000000;
-}
-
-input:focus , textarea:focus{
-    outline: 0;
-}
-textarea:not(:placeholder-shown){
-    border: 1px solid #98E37E;
-}
-p{
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 21px;
-    color: #2E2E2E;
-}
-input[type=file]::-webkit-file-upload-button{
-    cursor: pointer;
-}
-textarea{
-    padding-top: 13px;
-    height: 103px;
-    resize: none;
-}
-.add-button{
-    width: 289px;
-    height: 48px;
-    background: #62A1EB;
-    border-radius: 4px;
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 20px;
-    color: #FFFFFF;
-    margin-bottom: 65px;
-    border: none;
+select {
+  outline: none;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 21px;
+  height: 48px;
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid #bcbcbc;
+  border-radius: 4px;
+  padding-left: 16px;
+  padding-right: 19px;
+  color: #000000;
 }
 
-
-
-
-
+input:focus,
+textarea:focus {
+  outline: 0;
+}
+textarea:not(:placeholder-shown) {
+  border: 1px solid #98e37e;
+}
+p {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+  color: #2e2e2e;
+}
+input[type="file"]::-webkit-file-upload-button {
+  cursor: pointer;
+}
+textarea {
+  padding-top: 13px;
+  height: 103px;
+  resize: none;
+}
