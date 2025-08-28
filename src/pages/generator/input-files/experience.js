@@ -1,6 +1,6 @@
 import Domo from "@zyrab/domo";
 
-import expTemplate from "../../../components/exp-template.js";
+import expTemplate from "./exp-template.js";
 import createAddButton from "../../../components/add-button.js";
 
 export default function createExpereience(index = 0) {

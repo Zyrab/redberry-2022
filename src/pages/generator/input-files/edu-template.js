@@ -1,6 +1,6 @@
 import Domo from "@zyrab/domo";
-import createSelectOptions from "./select-options.js";
-import createTextInput from "./input-text.js";
+import createSelectOptions from "../../../components/select-options.js";
+import createTextInput from "../../../components/input-text.js";
 
 export default async function eduTemplate(index) {
   const content = {

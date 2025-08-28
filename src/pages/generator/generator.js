@@ -1,8 +1,8 @@
 import Domo from "@zyrab/domo";
 
-import createPersonalInfo from "./personal-info.js";
-import createExpereience from "./experience.js";
-import createEducation from "./education.js";
+import createPersonalInfo from "./input-files/personal-info.js";
+import createExpereience from "./input-files/experience.js";
+import createEducation from "./input-files/education.js";
 import createPageButtons from "../../components/page-buttons.js";
 import createFormHeader from "../../components/form-header.js";
 

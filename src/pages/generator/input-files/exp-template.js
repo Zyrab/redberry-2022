@@ -1,5 +1,5 @@
 import Domo from "@zyrab/domo";
-import createTextInput from "./input-text.js";
+import createTextInput from "../../../components/input-text.js";
 
 export default function expTemplate(index) {
   const content = {

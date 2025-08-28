@@ -1,6 +1,6 @@
 import Domo from "@zyrab/domo";
 
-import eduTemplate from "../../../components/edu-template.js";
+import eduTemplate from "./edu-template.js";
 import createAddButton from "../../../components/add-button.js";
 
 export default async function createEducation() {

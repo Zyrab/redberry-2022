@@ -1,5 +1,5 @@
-import eduTemplate from "../components/edu-template.js";
-import expTemplate from "../components/exp-template.js";
+import eduTemplate from "../pages/generator/input-files/edu-template.js";
+import expTemplate from "../pages/generator/input-files/exp-template.js";
 
 const tmplts = { "add-edu": eduTemplate, "add-exp": expTemplate };
 
