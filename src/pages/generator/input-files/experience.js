@@ -1,7 +1,7 @@
 import Domo from "@zyrab/domo";
 
-import expTemplate from "../../components/exp-template.js";
-import createAddButton from "../../components/add-button.js";
+import expTemplate from "../../../components/exp-template.js";
+import createAddButton from "../../../components/add-button.js";
 
 export default function createExpereience(index = 0) {
   return Domo("fieldset")

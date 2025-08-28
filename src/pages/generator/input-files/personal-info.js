@@ -1,7 +1,7 @@
 import Domo from "@zyrab/domo";
 
-import createTextInput from "../../components/input-text.js";
-import createImgInput from "../../components/input-img.js";
+import createTextInput from "../../../components/input-text.js";
+import createImgInput from "../../../components/input-img.js";
 
 export default function createPersonalInfo() {
   return Domo("fieldset")

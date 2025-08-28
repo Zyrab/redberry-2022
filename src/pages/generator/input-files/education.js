@@ -1,8 +1,7 @@
 import Domo from "@zyrab/domo";
 
-import createTextInput from "../../components/input-text.js";
-import eduTemplate from "../../components/edu-template.js";
-import createAddButton from "../../components/add-button.js";
+import eduTemplate from "../../../components/edu-template.js";
+import createAddButton from "../../../components/add-button.js";
 
 export default async function createEducation() {
   return Domo("fieldset")
