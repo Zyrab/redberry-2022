@@ -1,7 +1,11 @@
 import createFormHeader from "../components/form-header.js";
 
+import validatePage from "./utils/validate-page.js";
+import updateButtons from "./utils/update-buttons.js";
 export default function pageHandler(e, btn, form, page, header) {
   const action = btn.dataset.action;
+  if (validatePage(form[page].element) && action === "next") return { page, header };
+
   if (action === "next") {
     if (page === form.length - 1) {
       console.log("Submit or Finish logic here");
@@ -20,14 +24,6 @@ export default function pageHandler(e, btn, form, page, header) {
   updateButtons(page, btn.closest("div"), form);
   header = header.replace(header.build(), createFormHeader(title[page], page));
   return { page, header };
-}
-
-function updateButtons(page, div, form) {
-  const btnPrev = div.querySelector(".btn-1");
-  const btnNext = div.querySelector(".btn-2");
-
-  btnPrev.classList.toggle("hidden", page === 0);
-  btnNext.textContent = page === form.length - 1 ? "დაასრულე" : "შემდეგი";
 }
 
 const title = {
