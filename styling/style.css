@@ -1,43 +1,379 @@
 @font-face {
-        font-family: "HelveticaNeue";
-        src: url("../fonts/HelveticaNeue.ttc");
+  font-family: "HelveticaNeue";
+  src: url("../fonts/HelveticaNeue.ttc");
 }
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-body { 
-    background-image:url(../imiges/LOGO-40\ 1.png), url(../imiges/shutterstock_2189773743\ 1.png);
-    background-repeat: no-repeat;
-    background-position: 1076px 550px, 0 0;
+body {
+  height: 100vh;
+  font-family: "HelveticaNeue";
 }
-main { 
-    width: 95%;
-    margin: auto;
+main {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
 }
-header div {
-    padding: 25px 0px 26px;
+section {
+  height: 100vh;
+  width: 50%;
+  padding: 2rem 3.5rem;
+  background-color: #f9f9f9;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+fieldset {
+  border: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+form {
+  height: 100%;
+  padding: 2rem;
+  gap: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 hr {
-    border: 1px solid #1A1A1A;
+  border: 1px solid #1a1a1a;
 }
-.button{
-    height: 980px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.field-hr {
+  border: 1px solid #bcbcbc;
 }
-button{
-    width: 464px;
-    height: 60px;
-    background: #1A1A1A;
-    border-radius: 8px;
+.button-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-a{
-    color: #ffffff;
-    font-size:20px ;
-    font-family: "HelveticaNeue";
-    font-weight: 500;
-    text-decoration: none;
+button {
+  width: 464px;
+  height: 60px;
+  background: #1a1a1a;
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 20px;
+  font-family: "HelveticaNeue";
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+}
+.page-button {
+  width: 151px;
+  height: 48px;
+  background: #6b40e3;
+  border-radius: 4px;
+  border: none;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0.08em;
+  color: #ffffff;
+}
+.add-button {
+  width: 289px;
+  height: 48px;
+  background: #62a1eb;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  color: #ffffff;
+  border: none;
+}
+
+input,
+textarea {
+  font-family: "HelveticaNeue";
+  background: #ffffff;
+  border: 1px solid #bcbcbc;
+  border-radius: 4px;
+}
+textarea {
+  resize: none;
+  height: 103px;
+}
+select {
+  outline: none;
+  border: 1px solid #bcbcbc;
+  border-radius: 4px;
+}
+input:focus,
+textarea:focus {
+  outline: 0;
+}
+.image-upload {
+  border: none;
+  width: 107px;
+  height: 27px;
+  background: #0e80bf;
+  color: #ffffff;
+  border-radius: 4px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  overflow: hidden;
+  position: relative;
+}
+.success {
+  border: 1px solid #98e37e;
+}
+.error {
+  border: 1px solid #ef5050;
+}
+
+.bg-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -2;
+}
+.bg-logo {
+  position: absolute;
+  top: 60%;
+  left: 60%;
+}
+
+/* utility classes */
+
+/* ==== Flex & Layout ==== */
+.flex {
+  display: flex;
+}
+.col {
+  flex-direction: column;
+}
+.wrap {
+  flex-wrap: wrap;
+}
+.ai-c {
+  align-items: center;
+}
+.jc-s {
+  justify-content: start;
+}
+.jc-c {
+  justify-content: center;
+}
+.jc-sb {
+  justify-content: space-between;
+}
+/* ==== Flex & gaps ==== */
+.g-0\.5 {
+  gap: 0.5rem;
+}
+.g-1 {
+  gap: 1rem;
+}
+.g-2 {
+  gap: 2rem;
+}
+.g-3 {
+  gap: 3rem;
+}
+.g-3\.5 {
+  gap: 3.5rem;
+}
+/* ==== Spacing ==== */
+.m-auto {
+  margin: auto;
+}
+.p-0\.5 {
+  padding: 0.5rem;
+}
+.p-1 {
+  padding: 1rem;
+}
+.p-2 {
+  padding: 2.5rem;
+}
+.p-1\.5 {
+  padding: 1.5rem;
+}
+.px-1 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.px-2\.5 {
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+}
+.py-1\.5 {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+.py-1 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.py-3 {
+  padding: 3rem 0;
+}
+.mb-2 {
+  margin-bottom: 2rem;
+}
+.pr-2 {
+  padding-right: 2rem;
+}
+.py-0\.5 {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+.py-0\.8 {
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
+}
+/* ==== Width & Height ==== */
+.w-full {
+  width: 100%;
+}
+.h-full {
+  height: 100%;
+}
+.w-1\/2 {
+  width: 50%;
+}
+.w-1 {
+  width: 1rem;
+}
+.h-1 {
+  height: 1rem;
+}
+.w-3 {
+  width: 3rem;
+}
+.h-2\.125r {
+  height: 2.125rem;
+}
+.max-w-25 {
+  max-width: 25rem;
+}
+.max-w-31 {
+  max-width: 31rem;
+}
+.max-w-35 {
+  max-width: 35rem;
+}
+.max-w-40 {
+  max-width: 40rem;
+}
+.max-w-65 {
+  max-width: 65rem;
+}
+.max-w-81 {
+  max-width: 81rem;
+}
+.min-h-100vh {
+  min-height: 100vh;
+}
+/* ==== Typography ==== */
+.ta-c {
+  text-align: center;
+}
+.sm {
+  font-size: 0.8125rem;
+  letter-spacing: 0.02em;
+}
+.md {
+  line-height: 1rem;
+
+  font-size: 0.875rem;
+  letter-spacing: 0.018em;
+  font-weight: 500;
+}
+.lg {
+  line-height: 1.3rem;
+  font-size: 1rem;
+  font-weight: 700;
+  color: black;
+}
+.xl {
+  font-size: 1.25rem;
+  letter-spacing: -0.01em;
+}
+.xxl {
+  font-size: 1.75rem;
+  letter-spacing: -0.02em;
+}
+.italic {
+  font-style: italic;
+}
+.txt-bege {
+  color: var(--color-bege);
+}
+/* ==== Colors ==== */
+.bg-prim {
+  background-color: var(--color-primary);
+}
+.bg-pprim {
+  background-color: var(--color-pre-primary);
+}
+.bg-bege {
+  background-color: var(--color-bege);
+}
+.bg-accent {
+  background-color: var(--color-accent);
+}
+/* ==== Border & Radius ==== */
+.b-accent {
+  border: var(--color-accent) solid 1px;
+}
+.bb-1-sec {
+  border-bottom: var(--color-secondary) solid 1px;
+}
+/* ==== Positioning ==== */
+.rel {
+  position: relative;
+}
+.abs {
+  position: absolute;
+}
+.hidden {
+  visibility: hidden;
+}
+.bottom-0 {
+  bottom: 0;
+}
+.top-0 {
+  top: 0;
+}
+.right-0 {
+  right: 0;
+}
+.z-10 {
+  z-index: 10;
+}
+/* ==== Transition & Transform ==== */
+.trans\:bg-0\.3 {
+  transition: background-color 0.3s ease;
+}
+/* === cursor === */
+.pointer {
+  cursor: pointer;
+}
+.overflowX-auto {
+  overflow-x: auto;
+}
+.tab-2 {
+  tab-size: 2;
+}
+.op-0 {
+  opacity: 0;
+}
+.transform-1\/2 {
+  transform: translateX(50%);
+}
+
+.labelError {
+  color: #e52f2f;
 }
