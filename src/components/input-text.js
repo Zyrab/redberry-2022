@@ -8,6 +8,7 @@ export default function createTextInput({
   hint,
   filter,
   type = "text",
+  value,
   inside = true,
   options = [],
 }) {
@@ -23,7 +24,8 @@ export default function createTextInput({
             .cls("lg w-full px-1 py-0.8")
             .data({ validator: filter }) // hook into universal validator
             .attr({ type, name: id, id, placeholder })
-            .child([options]),
+            .child([options])
+            .val(value),
           Domo()
             .cls(inside ? "abs top-0 right-0 transform-1/2 w-3" : "")
             .cls("py-1 flex ai-c jc-sb")
@@ -31,11 +33,11 @@ export default function createTextInput({
               Domo("img")
                 .cls(!inside ? "abs transform-1/2" : "")
                 .cls("w-1 valid hidden")
-                .attr({ src: "/imiges/valid.png", alt: "valid" }),
+                .attr({ src: "/public/images/valid.png", alt: "valid" }),
               Domo("img")
                 .cls(!inside ? "abs transform-1/2" : "")
                 .cls("w-1 invalid hidden")
-                .attr({ src: "/imiges/invalid.png" }),
+                .attr({ src: "/public/images/invalid.png" }),
             ])
             .if(filter),
         ]),
