@@ -6,11 +6,11 @@ export default function createFormHeader(title, page) {
     .cls("flex ai-c g-2 py-1.5")
     .child([
       Domo("nav")
-        .cls("flex ai-c")
+        .cls("flex ai-c abs pl-2 left-0")
         .child([
           Domo("img")
             .cls("pointer")
-            .attr({ src: "/imiges/Vector.png", alt: "back-arrow" })
+            .attr({ src: "/public/images/Vector.png", alt: "back-arrow" })
             .on("click", () => {
               Router.goTo("/");
             }),
@@ -20,7 +20,10 @@ export default function createFormHeader(title, page) {
         .child([
           Domo()
             .cls("flex jc-sb ai-c w-full")
-            .child([Domo("h1").txt(title), Domo("img").attr({ src: `/imiges/${page + 1}.png`, alt: "page-counter" })]),
+            .child([
+              Domo("h1").txt(title),
+              Domo("img").attr({ src: `/public/images/${page + 1}.png`, alt: "page-counter" }),
+            ]),
           Domo("hr"),
         ]),
     ]);
