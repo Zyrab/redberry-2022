@@ -1,5 +1,5 @@
 export default async function fetchDiplomas() {
-  const url = "/diplomas.json";
+  const url = "/public/data/diplomas.json";
   try {
     const response = await fetch(url);
     if (!response.ok) {
