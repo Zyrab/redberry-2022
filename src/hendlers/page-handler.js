@@ -9,6 +9,7 @@ export default function pageHandler(e, btn, form, page, header) {
   if (action === "next") {
     if (page === form.length - 1) {
       console.log("Submit or Finish logic here");
+      document.querySelector("FORM").classList.add("none");
       return { page, header };
     }
     form[page].show(false);
