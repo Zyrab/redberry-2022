@@ -4,7 +4,14 @@ export default function validatePage(pageEl) {
 
   inputs.forEach((input) => {
     const validator = input.dataset.validator;
-    const invalid = validator && (input.classList.contains("error") || input.value === "");
+    let value;
+    if (validator === "file") {
+      value = input.dataset.uploaded === "0";
+    } else {
+      value = input.value === "";
+    }
+    const invalid = validator && (input.classList.contains("error") || value);
+
     const label = input.labels?.[0] || pageEl.querySelector(`label[for="${input.id}"]`);
     if (invalid && label) {
       label.classList.add("labelError");
