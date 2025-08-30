@@ -1,15 +1,26 @@
 import eduTemplate from "../pages/generator/input-files/edu-template.js";
 import expTemplate from "../pages/generator/input-files/exp-template.js";
 
-const tmplts = { "add-edu": eduTemplate, "add-exp": expTemplate };
+import createPrevEdu from "../pages/generator/preview/prev-edu.js";
+import createPrevExp from "../pages/generator/preview/prev-exp.js";
 
-export default async function addHandler(e, btn, index) {
-  index++;
-  const action = btn.dataset.action;
+const formTemplates = { edu: eduTemplate, exp: expTemplate };
+const previewTemplates = { edu: createPrevEdu, exp: createPrevExp };
 
-  const before = btn.closest(".add-before");
-  const parent = before.parentNode;
-  const newChild = await tmplts[action](index);
-  parent.insertBefore(newChild.build(), before);
-  return index;
+export default async function addSectionHandler(event, button, indices) {
+  const sectionType = button.dataset.action;
+
+  indices[sectionType]++;
+  const currentIndex = indices[sectionType];
+
+  const insertBeforeEl = button.closest(".add-before");
+  const formContainer = insertBeforeEl.parentNode;
+  const newFormField = await formTemplates[sectionType]("", currentIndex);
+  formContainer.insertBefore(newFormField.build(), insertBeforeEl);
+
+  const previewContainer = document.getElementById(`${sectionType}-prev`);
+  const newPreview = previewTemplates[sectionType]("", currentIndex);
+  previewContainer.appendChild(newPreview.build());
+
+  return indices;
 }
