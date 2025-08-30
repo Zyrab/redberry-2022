@@ -1,6 +1,6 @@
 import Domo from "@zyrab/domo";
 
-export default function createImgInput({ id, label }) {
+export default function createImgInput({ id, label, uploaded }) {
   let fileImage = null;
   return Domo()
     .cls("flex ai-c g-0.5 w-full cont")
@@ -8,7 +8,7 @@ export default function createImgInput({ id, label }) {
       Domo("label").cls("lg").attr({ for: id }).txt(label),
       Domo("input")
         .cls("hidden abs")
-        .data({ validator: "file" }) // use universal validator
+        .data({ validator: "file", uploaded }) // use universal validator
         .ref((el) => (fileImage = el))
         .attr({ type: "file", id, accept: "image/*" }),
       Domo("button")
@@ -19,8 +19,8 @@ export default function createImgInput({ id, label }) {
       Domo()
         .cls("h-full flex ai-c")
         .child([
-          Domo("img").cls("w-1 abs valid hidden").attr({ src: "/imiges/valid.png", alt: "valid" }),
-          Domo("img").cls("w-1 abs invalid hidden").attr({ src: "/imiges/invalid.png" }),
+          Domo("img").cls("w-1 abs valid hidden").attr({ src: "/public/images/valid.png", alt: "valid" }),
+          Domo("img").cls("w-1 abs invalid hidden").attr({ src: "/public/images/invalid.png" }),
         ]),
     ]);
 }
