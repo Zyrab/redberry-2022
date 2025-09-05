@@ -35,7 +35,7 @@ This isn’t meant to be a polished product — it’s an experiment to test Dom
 
 ## Repository Structure
 
-- `legacy/2022` → Available via Git tag: [`v1.0-2022`](../../tree/v1.0-2022)
+- `legacy/2022` → Available via Git tag: [`v1.0-2022`](https://github.com/Zyrab/redberry-2022/releases/tag/v1.0-2022)
 - `src/` → Current remake (2025) code
 
 ---
@@ -46,7 +46,7 @@ This isn’t meant to be a polished product — it’s an experiment to test Dom
 # clone the repo
 git clone https://github.com/Zyrab/redberry-2022
 
-cd yredberry-2022
+cd redberry-2022
 
 # run node serve.js (if using node.js)
 # or use a simple dev server (recommended)
